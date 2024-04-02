@@ -18,16 +18,15 @@ class RolesAndUserSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
-        // Insérer le premier utilisateur avec le rôle admin
+
         $userId = DB::table('users')->insertGetId([
-            'name' => 'Admin User',
+            'name' => 'Admin user',
             'email' => 'admin@example.com',
             'password' => bcrypt('password'),
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
-        // Insérer dans la table pivot "users_roles"
         DB::table('users_roles')->insert([
             'user_id' => $userId,
             'role_id' => $roleId,
