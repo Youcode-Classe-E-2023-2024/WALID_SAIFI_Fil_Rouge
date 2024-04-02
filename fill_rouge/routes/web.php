@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\AuthentificationController;
+use App\Http\Controllers\ForgetpasswordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
