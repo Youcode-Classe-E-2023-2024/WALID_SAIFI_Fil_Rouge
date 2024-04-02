@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/fill_rouge/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/fill_rouge/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/fill_rouge/tests/Feature" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/fill_rouge/tests/Unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/darkaonline/l5-swagger" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/defuse/php-encryption" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/firebase/php-jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/laravel/passport" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/lcobucci/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/lcobucci/jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/league/event" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/league/oauth2-server" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/league/uri" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/league/uri-interfaces" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/nyholm/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/paragonie/constant_time_encoding" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/phpseclib/phpseclib" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/swagger-api/swagger-ui" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/symfony/psr-http-message-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/zircote/swagger-php" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
