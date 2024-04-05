@@ -92,7 +92,7 @@
     <!-- Hero Section - Home Page -->
     <section id="hero" class="hero">
 
-        <img src="{{asset('assets/img/hero-bg.jpg')}}" alt="" data-aos="fade-in">
+        <img src="frontend/assets/img/safi_test.jpg" alt="" data-aos="fade-in">
 
         <div class="container">
             <div class="row">
