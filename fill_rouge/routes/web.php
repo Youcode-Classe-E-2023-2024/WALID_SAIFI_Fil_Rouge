@@ -23,5 +23,8 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/sinup', function () {
+    return view('sinup');
+});
 
 
