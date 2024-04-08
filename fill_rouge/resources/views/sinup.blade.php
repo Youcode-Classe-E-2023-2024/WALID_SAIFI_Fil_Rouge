@@ -28,68 +28,49 @@
                         <div class="brand-logo">
                             <img src="dashbord/images/logo.svg" alt="logo">
                         </div>
-                        <h4>New here?</h4>
-                        <h6 class="font-weight-light">Join us today! It takes only few steps</h6>
-                        <form class="pt-3">
+                        <h4>Registre</h4>
+
+                        <form class="pt-3" method="POST" action="{{ route('register') }}">
+                            @csrf
                             <div class="form-group">
-                                <label>Username</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend bg-transparent">
-                      <span class="input-group-text bg-transparent border-right-0">
-                        <i class="mdi mdi-account-outline text-primary"></i>
-                      </span>
-                                    </div>
-                                    <input type="text" class="form-control form-control-lg border-left-0" placeholder="Username">
-                                </div>
+                                <label>Nom d'utilisateur</label>
+                                <input type="text" name="name" class="form-control form-control-lg" placeholder="Nom d'utilisateur" required>
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend bg-transparent">
-                      <span class="input-group-text bg-transparent border-right-0">
-                        <i class="mdi mdi-email-outline text-primary"></i>
-                      </span>
-                                    </div>
-                                    <input type="email" class="form-control form-control-lg border-left-0" placeholder="Email">
-                                </div>
+                                <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" required>
                             </div>
                             <div class="form-group">
-                                <label>Country</label>
-                                <select class="form-control form-control-lg" id="exampleFormControlSelect2">
-                                    <option>Country</option>
-                                    <option>United States of America</option>
-                                    <option>United Kingdom</option>
-                                    <option>India</option>
-                                    <option>Germany</option>
-                                    <option>Argentina</option>
+                                <label>Votre situation</label>
+                                <select name="role" class="form-control form-control-lg" required>
+                                    <option value="Utilisateur">Utilisateur</option>
+                                    <option value="Vendeur">Vendeur</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend bg-transparent">
-                      <span class="input-group-text bg-transparent border-right-0">
-                        <i class="mdi mdi-lock-outline text-primary"></i>
-                      </span>
-                                    </div>
-                                    <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password">
-                                </div>
+                                <label>Mot de passe</label>
+                                <input type="password" name="password" class="form-control form-control-lg" placeholder="Mot de passe" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Confirmation de mot de passe</label>
+                                <input type="password" name="password_confirmation" class="form-control form-control-lg" placeholder="Confirmation de mot de passe" required>
                             </div>
                             <div class="mb-4">
                                 <div class="form-check">
                                     <label class="form-check-label text-muted">
-                                        <input type="checkbox" class="form-check-input">
-                                        I agree to all Terms & Conditions
+                                        <input type="checkbox" class="form-check-input" required>
+                                        J'accepte toutes les conditions générales
                                     </label>
                                 </div>
                             </div>
                             <div class="mt-3">
-                                <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN UP</a>
+                                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">S'INSCRIRE</button>
                             </div>
                             <div class="text-center mt-4 font-weight-light">
-                                Already have an account? <a href="login.html" class="text-primary">Login</a>
+                                Vous avez déjà un compte? <a href="login.html" class="text-primary">Connectez-vous</a>
                             </div>
                         </form>
+
                     </div>
                 </div>
                 <div class="col-lg-6 register-half-bg d-flex flex-row">
