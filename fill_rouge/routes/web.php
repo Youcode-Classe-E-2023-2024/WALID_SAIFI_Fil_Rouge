@@ -25,7 +25,7 @@ Route::get('/login', function () {
 })->name('login');
 Route::get('/sinup', function () {
     return view('sinup');
-});
+})->name('sinup');
 Route::get('/dashboard', function () {
     return view('Admin.dashboard');
 });
