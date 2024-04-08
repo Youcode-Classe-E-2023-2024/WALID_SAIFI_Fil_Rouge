@@ -240,17 +240,7 @@
                     <div class="col-md-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body dashboard-tabs p-0">
-                                <ul class="nav nav-tabs px-4" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="overview-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="sales-tab" data-bs-toggle="tab" href="#sales" role="tab" aria-controls="sales" aria-selected="false">Sales</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="purchases-tab" data-bs-toggle="tab" href="#purchases" role="tab" aria-controls="purchases" aria-selected="false">Purchases</a>
-                                    </li>
-                                </ul>
+
                                 <div class="tab-content py-0 px-0">
                                     <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                                         <div class="d-flex flex-wrap justify-content-xl-between">
@@ -404,13 +394,13 @@
 
                 <div class="row">
                     <div class="col-md-12 stretch-card">
-                        <div class="card">
+
 
                             <main>
                                 @yield('content')
                             </main>
 
-                        </div>
+
                     </div>
                 </div>
 
@@ -462,6 +452,7 @@
     <script src="{{ asset('dashbord/js/chart.js')}}"></script>
     <!-- End custom js for this page-->
     <script src="{{ asset('dashbord/js/jquery.cookie.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('dashbord/js/file-upload.js')}}"></script>
 </body>
 
 </html>
