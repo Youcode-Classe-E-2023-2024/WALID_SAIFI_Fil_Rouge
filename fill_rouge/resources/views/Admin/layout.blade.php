@@ -25,7 +25,7 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex justify-content-center">
             <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-                <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a>
+                <a class="navbar-brand brand-logo" href="index.html"><img src="{{ asset('dashbord/images/logo.svg')}}" alt="logo"/></a>
                 <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                     <span class="mdi mdi-sort-variant"></span>
@@ -55,7 +55,7 @@
                         <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
                         <a class="dropdown-item">
                             <div class="item-thumbnail">
-                                <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
+                                <img src="{{ asset('dashbord/images/faces/face4.jpg')}}" alt="image" class="profile-pic">
                             </div>
                             <div class="item-content flex-grow">
                                 <h6 class="ellipsis font-weight-normal">David Grey
@@ -67,7 +67,7 @@
                         </a>
                         <a class="dropdown-item">
                             <div class="item-thumbnail">
-                                <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
+                                <img src="{{ asset('dashbord/images/faces/face2.jpg')}}" alt="image" class="profile-pic">
                             </div>
                             <div class="item-content flex-grow">
                                 <h6 class="ellipsis font-weight-normal">Tim Cook
@@ -79,7 +79,7 @@
                         </a>
                         <a class="dropdown-item">
                             <div class="item-thumbnail">
-                                <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
+                                <img src="{{ asset('dashbord/images/faces/face3.jpg')}}" alt="image" class="profile-pic">
                             </div>
                             <div class="item-content flex-grow">
                                 <h6 class="ellipsis font-weight-normal"> Johnson
@@ -141,7 +141,7 @@
                 </li>
                 <li class="nav-item nav-profile dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-                        <img src="images/faces/face5.jpg" alt="profile"/>
+                        <img src="{{ asset('dashbord/images/faces/face5.jpg')}}" alt="profile"/>
                         <span class="nav-profile-name">Louis Barnett</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -173,11 +173,6 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                        <i class="mdi mdi-circle-outline menu-icon"></i>
-                        <span class="menu-title">UI Elements</span>
-                        <i class="menu-arrow"></i>
-                    </a>
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
@@ -200,36 +195,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="pages/tables/basic-table.html">
                         <i class="mdi mdi-grid-large menu-icon"></i>
-                        <span class="menu-title">Tables</span>
+                        <span class="menu-title">Gestion des Gtegorier</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="pages/icons/mdi.html">
-                        <i class="mdi mdi-emoticon menu-icon"></i>
-                        <span class="menu-title">Icons</span>
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                         <i class="mdi mdi-account menu-icon"></i>
-                        <span class="menu-title">User Pages</span>
-                        <i class="menu-arrow"></i>
+                        <span class="menu-title">Modifier mon profiel</span>
+
                     </a>
-                    <div class="collapse" id="auth">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                            <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Login 2 </a></li>
-                            <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                            <li class="nav-item"> <a class="nav-link" href="pages/samples/register-2.html"> Register 2 </a></li>
-                            <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="documentation/documentation.html">
-                        <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                        <span class="menu-title">Documentation</span>
-                    </a>
+
                 </li>
             </ul>
         </nav>
@@ -362,8 +338,7 @@
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2021</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Only the best <a href="https://www.bootstrapdash.com/" target="_blank"> Bootstrap dashboard  </a> templates</span>
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©  2024</span>
                     </div>
                 </footer>
                 <!-- partial -->
@@ -372,9 +347,6 @@
         </div>
         <!-- page-body-wrapper ends -->
     </div>
-    <!-- container-scroller -->
-
-    <!-- plugins:js -->
     <script src="{{ asset('dashbord/vendors/base/vendor.bundle.base.js')}}"></script>
     <!-- endinject -->
     <!-- Plugin js for this page-->
@@ -392,20 +364,15 @@
     <script src="{{ asset('dashbord/js/data-table.js')}}"></script>
     <script src="{{ asset('dashbord/js/jquery.dataTables.js')}}"></script>
     <script src="{{ asset('dashbord/js/dataTables.bootstrap4.js')}}"></script>
-
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <script src="{{ asset('dashbord/vendors/chart.js/Chart.min.js')}}"></script>
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
-    <script src="{{ asset('dashbord/js/off-canvas.js')}}"></script>
-    <script src=".{{ asset('dashbord/js/hoverable-collapse.js')}}"></script>
-    <script src="{{ asset('dashbord/js/template.js')}}"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="{{ asset('dashbord/js/chart.js')}}"></script>
     <!-- End custom js for this page-->
+
     <script src="{{ asset('dashbord/js/jquery.cookie.js')}}" type="text/javascript"></script>
+
+
+
+
+
+    <script src="{{ asset('dashbord/js/chart.js')}}"></script>
     <script src="{{ asset('dashbord/js/file-upload.js')}}"></script>
 </body>
 
