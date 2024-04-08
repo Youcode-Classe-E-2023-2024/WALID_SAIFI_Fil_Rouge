@@ -29,5 +29,8 @@ Route::get('/sinup', function () {
 Route::get('/dashboard', function () {
     return view('Admin.dashboard');
 });
+Route::get('/profiel', function () {
+    return view('Admin.profiel');
+});
 
 
