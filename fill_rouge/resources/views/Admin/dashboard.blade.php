@@ -407,9 +407,6 @@
                         <div class="card">
 
 
-
-
-
                             <div class="content-wrapper">
                                 <div class="row">
                                     <div class="col-lg-6 grid-margin stretch-card">
