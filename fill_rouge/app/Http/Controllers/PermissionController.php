@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Models\Permission;
 
@@ -60,7 +61,7 @@ class PermissionController extends Controller
 
     public function assignPermissionToGroup(Request $request, $groupId, $permId)
     {
-        $group = Group::findOrFail($groupId);
+        $group = Role::findOrFail($groupId);
         $permission = Permission::findOrFail($permId);
 
         // Vérifier si la permission est déjà assignée au groupe
