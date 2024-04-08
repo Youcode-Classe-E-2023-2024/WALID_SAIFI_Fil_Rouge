@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthentificationController;
 use App\Http\Controllers\ForgetpasswordController;
 use Illuminate\Support\Facades\Route;
@@ -23,9 +24,12 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login');
 })->name('login');
-Route::get('/sinup', function () {
-    return view('sinup');
-})->name('sinup');
+
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+
+
 Route::get('/dashboard', function () {
     return view('Admin.dashboard');
 });
