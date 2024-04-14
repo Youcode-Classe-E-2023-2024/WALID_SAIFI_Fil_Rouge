@@ -35,8 +35,8 @@ class VendeurController extends Controller
     {
         $vendeur = User::findOrFail($id);
 
-        // Assurez-vous que le vendeur a le rôle "Vendeur" avant de l'invalider
-        if ($vendeur->$vendeur->isVendor()) {
+
+        if ($vendeur->isVendor()) {
             $vendeur->validation = 0;
             $vendeur->save();
         }
