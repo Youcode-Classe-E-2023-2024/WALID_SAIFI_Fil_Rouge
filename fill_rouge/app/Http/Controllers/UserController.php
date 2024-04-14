@@ -44,31 +44,29 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-        // Validation des données de la requête
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
-        // Tentative de connexion de l'utilisateur
+
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Récupération de l'utilisateur authentifié
+
             $user = Auth::user();
 
-            // Vérification du rôle de l'utilisateur
+
             if ($user->isAdmin()) {
-                // Redirection vers le tableau de bord de l'administrateur
+
                 return redirect()->route('Admin.dashboard');
             } elseif ($user->isVendor()) {
-                // Redirection vers le tableau de bord du vendeur
-                return redirect()->route('vendeur.dashbord');
+
+                return redirect()->route('vendeur.dashboard');
             } elseif ($user->isUser()) {
-                // Redirection vers la page d'accueil de l'utilisateur
+
                 return redirect()->route('home');
             }
         }
-
-        // Si l'authentification échoue, redirigez avec un message d'erreur
         return redirect()->back()->withInput()->withErrors(['email' => 'Les informations d\'identification fournies sont incorrectes.']);
     }
 
