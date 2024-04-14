@@ -1,19 +1,29 @@
 @extends('Admin.layout')
 
 @section('content')
-
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 
 
     <div class="col-lg-6 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Ajouter Categories</h4>
+                <form method="POST" action="{{ route('categories.store') }}">
+                    @csrf
+                    <div class="form-group">
+                        <label for="name">Nom de la Catégorie</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nom de la Catégorie" name="name">
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Soumettre</button>
+                </form>
 
                 </div>
             </div>
         </div>
-
-
 
     <div class="col-lg-6 grid-margin stretch-card">
         <div class="card">
@@ -26,50 +36,25 @@
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th>User</th>
-                            <th>Product</th>
-                            <th>Sale</th>
-                            <th>Status</th>
+                            <th>Nom de Catégorie</th>
+                            <th>Action</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>Jacob</td>
-                            <td>Photoshop</td>
-                            <td class="text-danger"> 28.76% <i class="mdi mdi-arrow-down"></i></td>
-                            <td><label class="badge badge-danger">Pending</label></td>
-                        </tr>
-                        <tr>
-                            <td>Messsy</td>
-                            <td>Flash</td>
-                            <td class="text-danger"> 21.06% <i class="mdi mdi-arrow-down"></i></td>
-                            <td><label class="badge badge-warning">In progress</label></td>
-                        </tr>
-                        <tr>
-                            <td>John</td>
-                            <td>Premier</td>
-                            <td class="text-danger"> 35.00% <i class="mdi mdi-arrow-down"></i></td>
-                            <td><label class="badge badge-info">Fixed</label></td>
-                        </tr>
-                        <tr>
-                            <td>Peter</td>
-                            <td>After effects</td>
-                            <td class="text-success"> 82.00% <i class="mdi mdi-arrow-up"></i></td>
-                            <td><label class="badge badge-success">Completed</label></td>
-                        </tr>
-                        <tr>
-                            <td>Dave</td>
-                            <td>53275535</td>
-                            <td class="text-success"> 98.05% <i class="mdi mdi-arrow-up"></i></td>
-                            <td><label class="badge badge-warning">In progress</label></td>
-                        </tr>
+                        @foreach($categories as $category)
+                            <tr>
+                                <td>{{ $category->name }}</td>
+                                <td><button type="button" class="btn btn-success btn-rounded btn-fw">Modifier</button></td>
+                                <td><button type="button" class="btn btn-danger btn-rounded btn-fw">Supprimer</button></td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-
 
 
 
