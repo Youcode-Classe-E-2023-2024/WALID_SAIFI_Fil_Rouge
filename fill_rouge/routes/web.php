@@ -38,7 +38,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/profiel', function () {
     return view('Admin.profiel');
-});
+})->name('profiel');
 
 /* * ******************************************pour Admin****************************************************** */
 Route::get('/validation', [VendeurController::class, 'indexVendeurNonValidesestValider'])->name('validation');
