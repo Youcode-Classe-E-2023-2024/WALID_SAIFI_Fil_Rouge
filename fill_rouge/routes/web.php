@@ -37,11 +37,14 @@ Route::get('/dashboard', function () {
 Route::get('/profiel', function () {
     return view('Admin.profiel');
 });
+
+
+Route::get('/validation', function () {
+    return view('Admin.validation_user');
+});
 Route::post('/register', [UserController::class, 'register'])->name('register');
 Route::get('/register', [UserController::class, 'indexRegistre'])->name('register');
 Route::post('/login', [UserController::class, 'login'])->name('login');
-
-
 Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.deconnecter');
 
 
