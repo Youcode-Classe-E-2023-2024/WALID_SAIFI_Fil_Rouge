@@ -28,10 +28,8 @@
     <div class="col-lg-6 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Hoverable Table</h4>
-                <p class="card-description">
-                    Add class <code>.table-hover</code>
-                </p>
+                <h4 class="card-title">Liste des Catégories </h4>
+
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -45,8 +43,17 @@
                         @foreach($categories as $category)
                             <tr>
                                 <td>{{ $category->name }}</td>
-                                <td><button type="button" class="btn btn-success btn-rounded btn-fw">Modifier</button></td>
-                                <td><button type="button" class="btn btn-danger btn-rounded btn-fw">Supprimer</button></td>
+                                <td>
+                                    <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-success btn-rounded btn-fw">Modifier</a>
+                                </td>
+
+                                <td>
+                                    <form method="POST" action="{{ route('categories.destroy', $category->id) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-rounded btn-fw">SUPPRIMER</button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
