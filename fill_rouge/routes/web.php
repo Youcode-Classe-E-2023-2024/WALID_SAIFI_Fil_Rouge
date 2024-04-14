@@ -45,6 +45,10 @@ Route::get('/validation', [VendeurController::class, 'indexVendeurNonValidesestV
 Route::post('/validerVendeur/{id}', [VendeurController::class, 'validerVendeur'])->name('validerVendeur');
 Route::post('/invaliderVendeur/{id}', [VendeurController::class, 'invaliderVendeur'])->name('invaliderVendeur');
 Route::get('/categories', [CategoriesController::class, 'index'])->name('categories.index');
+Route::post('/categories/create', [CategoriesController::class, 'store'])->name('categories.store');
+Route::delete('/categories/{category}', [CategoriesController::class, 'destroy'])->name('categories.destroy');
+Route::get('/categories/{category}/edit', [CategoriesController::class, 'edit'])->name('categories.edit');
+
 
 
 
