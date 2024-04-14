@@ -182,7 +182,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/forms/basic_elements.html">
+                    <a class="nav-link" href="{{route('validation')}}">
                         <i class="mdi mdi-view-headline menu-icon"></i>
                         <span class="menu-title">Validation des Vendeurs</span>
                     </a>
@@ -194,17 +194,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/tables/basic-table.html">
+                    <a class="nav-link" href="{{route('categories.index')}}">
                         <i class="mdi mdi-grid-large menu-icon"></i>
                         <span class="menu-title">Gestion des catégories</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                    <a class="nav-link"  href="{{route('profiel')}}" >
                         <i class="mdi mdi-account menu-icon"></i>
                         <span class="menu-title">Modifier mon profiel</span>
-
                     </a>
 
                 </li>
