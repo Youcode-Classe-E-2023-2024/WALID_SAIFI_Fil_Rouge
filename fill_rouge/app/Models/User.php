@@ -24,16 +24,16 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return $this->roles()->where('role_id', 1)->exists();
+        return $this->roles()->where('name', 'Admin')->exists();
     }
 
     public function isVendor()
     {
-        return $this->roles()->where('role_id', 2)->exists();
+        return $this->roles()->where('name', 'Vendeur')->exists();
     }
 
     public function isUser()
     {
-        return $this->roles()->where('role_id', 3)->exists();
+        return $this->roles()->where('name', 'Utilisateur')->exists();
     }
 }
