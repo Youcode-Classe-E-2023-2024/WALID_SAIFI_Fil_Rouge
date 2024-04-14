@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthentificationController;
 use App\Http\Controllers\ForgetpasswordController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VendeurController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,9 +40,9 @@ Route::get('/profiel', function () {
 });
 
 
-Route::get('/validation', function () {
-    return view('Admin.validation_user');
-});
+Route::get('/validation', [VendeurController::class, 'indexVendeurNonValidesestValider'])->name('validation');
+Route::post('/validerVendeur/{id}', [VendeurController::class, 'validerVendeur'])->name('validerVendeur');
+
 Route::post('/register', [UserController::class, 'register'])->name('register');
 Route::get('/register', [UserController::class, 'indexRegistre'])->name('register');
 Route::post('/login', [UserController::class, 'login'])->name('login');
