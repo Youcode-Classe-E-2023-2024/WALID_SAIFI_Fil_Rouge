@@ -212,16 +212,17 @@
         </nav>
         <!-- partial -->
 
-                <div class="main-panel">
-                    <div class="content-wrapper">
-                        <div class="row">
+                <div class="main-panel" >
+                    <div class="content-wrapper" >
+                        <div class="row" >
+
 
                                 @yield('content')
 
-
+                            </div>
                         </div>
                     </div>
-                </div>
+
 
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->
