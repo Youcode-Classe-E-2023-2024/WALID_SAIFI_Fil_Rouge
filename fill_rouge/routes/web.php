@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthentificationController;
 use App\Http\Controllers\ForgetpasswordController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home1');
 });
 
 Route::get('/login', function () {
@@ -36,5 +37,7 @@ Route::get('/dashboard', function () {
 Route::get('/profiel', function () {
     return view('Admin.profiel');
 });
+Route::post('/register', [UserController::class, 'register'])->name('register');
+Route::get('/register', [UserController::class, 'indexRegistre']);
 
 
