@@ -196,7 +196,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="pages/tables/basic-table.html">
                         <i class="mdi mdi-grid-large menu-icon"></i>
-                        <span class="menu-title">Gestion des Gtegorier</span>
+                        <span class="menu-title">Gestion des catégories</span>
                     </a>
                 </li>
 
