@@ -72,7 +72,7 @@ class UserController extends Controller
     public function deconnecter(Request $request)
     {
         Auth::logout();
-        return redirect()->route('home'); 
+        return redirect()->route('home');
     }
 
 }
