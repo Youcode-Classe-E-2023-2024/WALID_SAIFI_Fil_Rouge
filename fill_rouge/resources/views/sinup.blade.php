@@ -33,10 +33,7 @@
                         <form class="pt-3" method="POST" action="{{ route('register') }}">
 
                         @csrf
-                            <div class="form-group">
-                                <label>Nom d'utilisateur</label>
-                                <input type="text" name="name" class="form-control form-control-lg" placeholder="Nom d'utilisateur" required>
-                            </div>
+
                             <div class="form-group">
                                 <label>Email</label>
                                 <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" required>
