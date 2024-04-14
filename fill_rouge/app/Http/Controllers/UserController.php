@@ -18,7 +18,6 @@ class UserController extends Controller
     {
         // Validation des données de la requête
         $request->validate([
-            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'role' => 'required|in:Utilisateur,Vendeur', // Vérifie que le rôle est soit "Utilisateur" soit "Vendeur"
@@ -26,7 +25,6 @@ class UserController extends Controller
 
         // Création de l'utilisateur
         $user = User::create([
-            'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
@@ -70,5 +68,11 @@ class UserController extends Controller
         return redirect()->back()->withInput()->withErrors(['email' => 'Les informations d\'identification fournies sont incorrectes.']);
     }
 
+
+    public function deconnecter(Request $request)
+    {
+        Auth::logout();
+        return redirect()->route('home'); 
+    }
 
 }
