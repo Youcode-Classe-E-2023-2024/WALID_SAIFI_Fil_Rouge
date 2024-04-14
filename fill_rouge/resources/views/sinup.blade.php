@@ -68,7 +68,7 @@
                                 <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">S'INSCRIRE</button>
                             </div>
                             <div class="text-center mt-4 font-weight-light">
-                                Vous avez déjà un compte? <a href="login.html" class="text-primary">Connectez-vous</a>
+                                Vous avez déjà un compte? <a href="{{route('login')}}" class="text-primary">Connectez-vous</a>
                             </div>
                         </form>
 
