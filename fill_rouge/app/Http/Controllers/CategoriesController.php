@@ -20,12 +20,12 @@ class CategoriesController extends Controller
             'name' => 'required|string|max:255|unique:categories,name',
         ]);
 
-        // Création de la catégorie
+
         $category = Category::create([
             'name' => $request->name,
         ]);
 
-        // Redirection avec un message de succès
+
         return redirect()->route('categories.index')->with('success', 'La catégorie a été ajoutée avec succès.');
     }
     public function destroy(Category $category)
@@ -35,4 +35,25 @@ class CategoriesController extends Controller
         return redirect()->route('categories.index')->with('success', 'La catégorie a été supprimée avec succès.');
     }
 
+    public function edit(Category $category)
+    {
+        $categories = Category::all();
+        return view('Admin.update_categories', compact('category', 'categories'));
+    }
+
+
+
+
+    public function update(Request $request, Category $category)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        $category->update([
+            'name' => $request->name,
+
+        ]);
+        return redirect()->route('categories.index')->with('success', 'La catégorie a été mise à jour avec succès.');
+    }
 }
