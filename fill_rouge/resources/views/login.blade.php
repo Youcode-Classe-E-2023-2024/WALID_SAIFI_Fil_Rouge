@@ -30,46 +30,54 @@
                         </div>
                         <h4>Welcome back!</h4>
                         <h6 class="font-weight-light">Happy to see you again!</h6>
-                        <form class="pt-3">
+                        <form class="pt-3" method="POST" action="{{ route('login') }}">
+                            @csrf
                             <div class="form-group">
-                                <label for="exampleInputEmail">Username</label>
+                                <label for="exampleInputEmail">Nom d'utilisateur</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend bg-transparent">
-                      <span class="input-group-text bg-transparent border-right-0">
-                        <i class="mdi mdi-account-outline text-primary"></i>
-                      </span>
+                <span class="input-group-text bg-transparent border-right-0">
+                    <i class="mdi mdi-account-outline text-primary"></i>
+                </span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg border-left-0" id="exampleInputEmail" placeholder="Username">
+                                    <input type="text" name="email" class="form-control form-control-lg border-left-0 @error('email') is-invalid @enderror" id="exampleInputEmail" placeholder="Nom d'utilisateur">
+                                    @error('email')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword">Password</label>
+                                <label for="exampleInputPassword">Mot de passe</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend bg-transparent">
-                      <span class="input-group-text bg-transparent border-right-0">
-                        <i class="mdi mdi-lock-outline text-primary"></i>
-                      </span>
+                <span class="input-group-text bg-transparent border-right-0">
+                    <i class="mdi mdi-lock-outline text-primary"></i>
+                </span>
                                     </div>
-                                    <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password">
+                                    <input type="password" name="password" class="form-control form-control-lg border-left-0 @error('password') is-invalid @enderror" id="exampleInputPassword" placeholder="Mot de passe">
+                                    @error('password')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="my-2 d-flex justify-content-between align-items-center">
                                 <div class="form-check">
                                     <label class="form-check-label text-muted">
-                                        <input type="checkbox" class="form-check-input">
-                                        Keep me signed in
+                                        <input type="checkbox" class="form-check-input" name="remember">
+                                        Rester connecté
                                     </label>
                                 </div>
-                                <a href="#" class="auth-link text-black">Forgot password?</a>
+                                <a href="#" class="auth-link text-black">Mot de passe oublié?</a>
                             </div>
                             <div class="my-3">
-                                <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">LOGIN</a>
+                                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">CONNEXION</button>
                             </div>
 
                             <div class="text-center mt-4 font-weight-light">
-                                Don't have an account? <a href="#" class="text-primary">Create</a>
+                                Vous n'avez pas de compte? <a href="{{route('register')}}" class="text-primary">Créer</a>
                             </div>
                         </form>
+
                     </div>
                 </div>
                 <div class="col-lg-6 login-half-bg d-flex flex-row">
