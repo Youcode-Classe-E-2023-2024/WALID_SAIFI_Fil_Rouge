@@ -48,6 +48,8 @@ Route::get('/categories', [CategoriesController::class, 'index'])->name('categor
 Route::post('/categories/create', [CategoriesController::class, 'store'])->name('categories.store');
 Route::delete('/categories/{category}', [CategoriesController::class, 'destroy'])->name('categories.destroy');
 Route::get('/categories/{category}/edit', [CategoriesController::class, 'edit'])->name('categories.edit');
+Route::put('/categories/{category}/update', [CategoriesController::class, 'update'])->name('categories.update');
+
 
 
 
