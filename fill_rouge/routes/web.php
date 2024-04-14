@@ -42,3 +42,7 @@ Route::get('/register', [UserController::class, 'indexRegistre'])->name('registe
 Route::post('/login', [UserController::class, 'login'])->name('login');
 
 
+Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.deconnecter');
+
+
+
