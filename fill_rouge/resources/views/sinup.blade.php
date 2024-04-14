@@ -31,7 +31,8 @@
                         <h4>Registre</h4>
 
                         <form class="pt-3" method="POST" action="{{ route('register') }}">
-                            @csrf
+
+                        @csrf
                             <div class="form-group">
                                 <label>Nom d'utilisateur</label>
                                 <input type="text" name="name" class="form-control form-control-lg" placeholder="Nom d'utilisateur" required>
