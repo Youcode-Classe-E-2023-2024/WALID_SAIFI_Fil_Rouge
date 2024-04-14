@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthentificationController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ForgetpasswordController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VendeurController;
@@ -39,10 +40,19 @@ Route::get('/profiel', function () {
     return view('Admin.profiel');
 });
 
-
+/* * ******************************************pour Admin****************************************************** */
 Route::get('/validation', [VendeurController::class, 'indexVendeurNonValidesestValider'])->name('validation');
 Route::post('/validerVendeur/{id}', [VendeurController::class, 'validerVendeur'])->name('validerVendeur');
 Route::post('/invaliderVendeur/{id}', [VendeurController::class, 'invaliderVendeur'])->name('invaliderVendeur');
+Route::get('/categories', [CategoriesController::class, 'index'])->name('categories.index');
+
+
+
+
+
+
+
+
 
 
 
