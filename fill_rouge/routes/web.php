@@ -42,6 +42,10 @@ Route::get('/profiel', function () {
 
 Route::get('/validation', [VendeurController::class, 'indexVendeurNonValidesestValider'])->name('validation');
 Route::post('/validerVendeur/{id}', [VendeurController::class, 'validerVendeur'])->name('validerVendeur');
+Route::post('/invaliderVendeur/{id}', [VendeurController::class, 'invaliderVendeur'])->name('invaliderVendeur');
+
+
+
 
 Route::post('/register', [UserController::class, 'register'])->name('register');
 Route::get('/register', [UserController::class, 'indexRegistre'])->name('register');
