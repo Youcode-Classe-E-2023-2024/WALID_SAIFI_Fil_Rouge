@@ -20,24 +20,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home1');
-});
+})->name('home');
 
 Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 
-Route::post('/register', [AuthController::class, 'register'])->name('register');
 
 
 Route::get('/dashboard', function () {
     return view('Admin.dashboard');
-});
+})->name('Admin.dashboard');
+
+
 Route::get('/profiel', function () {
     return view('Admin.profiel');
 });
 Route::post('/register', [UserController::class, 'register'])->name('register');
-Route::get('/register', [UserController::class, 'indexRegistre']);
+Route::get('/register', [UserController::class, 'indexRegistre'])->name('register');
+Route::post('/login', [UserController::class, 'login'])->name('login');
 
 
