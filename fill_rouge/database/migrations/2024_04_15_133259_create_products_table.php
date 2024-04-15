@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->float('prix');
             $table->unsignedBigInteger('id_categorie');
             $table->text('description')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
 
             // Clé étrangère
