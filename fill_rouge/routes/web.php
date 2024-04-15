@@ -68,13 +68,13 @@ Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.
 
 
 
-Route::get('/dashboard/vendeur', [ProductController::class, 'indexAjouterProduit'])->name('vendeur.dashboard');
+Route::get('/ajouterProduit', [ProductController::class, 'indexAjouterProduit'])->name('vendeur.ajouterProduit');
+Route::post('/ajoouterProduit',[ProductController::class, 'ajouterProduit'])->name('ajoouterProduit');
+
+Route::get('/dashbord/vendeur', [ProductController::class, 'index'])->name('vendeur.dashbord');
 
 
 
-Route::get('/ajouterProduit', function () {
-    return view('vendeur.ajouterProduit');
-})->name('ajouterProduit');
 
 Route::get('/profiel/vendeur', function () {
     return view('vendeur.profiel');
