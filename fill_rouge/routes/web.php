@@ -40,6 +40,9 @@ Route::get('/profiel', function () {
     return view('Admin.profiel');
 })->name('profiel');
 
+Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
+
+
 /* * ******************************************pour Admin****************************************************** */
 Route::get('/validation', [VendeurController::class, 'indexVendeurNonValidesestValider'])->name('validation');
 Route::post('/validerVendeur/{id}', [VendeurController::class, 'validerVendeur'])->name('validerVendeur');
