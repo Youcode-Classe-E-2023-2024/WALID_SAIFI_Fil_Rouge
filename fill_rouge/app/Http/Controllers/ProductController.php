@@ -50,5 +50,9 @@ public  function index(){
         return redirect()->back()->with('success', 'Produit ajouté avec succès');
     }
 
+    public  function  indexGestion(){
+      return view('vendeur.gestion_produit');
+    }
+
 
 }
