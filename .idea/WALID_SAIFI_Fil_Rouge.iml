@@ -9,6 +9,8 @@
       <sourceFolder url="file://$MODULE_DIR$/fill_rouge/app" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/fill_rouge/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/fill_rouge/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/darkaonline/l5-swagger" />
       <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/defuse/php-encryption" />
       <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/doctrine/annotations" />
@@ -28,6 +30,8 @@
       <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/swagger-api/swagger-ui" />
       <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/symfony/psr-http-message-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/zircote/swagger-php" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/intervention/gif" />
+      <excludeFolder url="file://$MODULE_DIR$/fill_rouge/vendor/intervention/image" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
