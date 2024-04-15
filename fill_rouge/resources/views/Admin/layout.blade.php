@@ -140,9 +140,18 @@
                     </div>
                 </li>
                 <li class="nav-item nav-profile dropdown">
+                    <?php
+                        $user = Auth::user();
+                        ?>
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-                        <img src="{{ asset('dashbord/images/faces/face5.jpg')}}" alt="profile"/>
-                        <span class="nav-profile-name">Louis Barnett</span>
+                        <img src="{{ asset('images/'.$user->image)}}" alt="profile"/>
+                        @if($user->name && $user->prenom)
+                            <span class="nav-profile-name">{{ $user->name . " " . $user->prenom }}</span>
+                        @else
+                            <span class="nav-profile-name">{{ $user->email }}</span>
+                        @endif
+
+
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
 
