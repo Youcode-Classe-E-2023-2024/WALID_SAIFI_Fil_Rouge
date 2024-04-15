@@ -31,17 +31,6 @@ Route::get('/login', function () {
 
 
 
-Route::get('/dashboard', function () {
-    return view('Admin.dashboard');
-})->name('Admin.dashboard');
-
-
-Route::get('/profiel', function () {
-    return view('Admin.profiel');
-})->name('profiel');
-
-Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
-
 
 /* * ******************************************pour Admin****************************************************** */
 Route::get('/validation', [VendeurController::class, 'indexVendeurNonValidesestValider'])->name('validation');
@@ -52,6 +41,17 @@ Route::post('/categories/create', [CategoriesController::class, 'store'])->name(
 Route::delete('/categories/{category}', [CategoriesController::class, 'destroy'])->name('categories.destroy');
 Route::get('/categories/{category}/edit', [CategoriesController::class, 'edit'])->name('categories.edit');
 Route::put('/categories/{category}/update', [CategoriesController::class, 'update'])->name('categories.update');
+
+Route::get('/dashboard', function () {
+    return view('Admin.dashboard');
+})->name('Admin.dashboard');
+
+
+Route::get('/profiel', function () {
+    return view('Admin.profiel');
+})->name('profiel');
+
+Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
 
 
 
