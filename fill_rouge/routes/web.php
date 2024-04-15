@@ -68,7 +68,7 @@ Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.
 
 
 Route::get('/dashboard/vendeur', function () {
-    return view('vendeur.dashboard');
+    return view('vendeur.dashVendeur');
 })->name('vendeur.dashboard');
 
 
