@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+
 class UserController extends Controller
 {
 
@@ -73,6 +74,41 @@ class UserController extends Controller
     {
         Auth::logout();
         return redirect()->route('home');
+    }
+
+
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'prenom' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'password' => 'nullable|string|min:8|confirmed',
+            'img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $user = auth()->user();
+        $user->name = $request->name;
+        $user->prenom = $request->prenom;
+        $user->email = $request->email;
+
+        // Mettre à jour le mot de passe si un nouveau mot de passe est fourni
+        if ($request->filled('password')) {
+            $user->password = bcrypt($request->password);
+        }
+
+        // Gérer le téléchargement de l'image si une nouvelle image est fournie
+        if ($request->hasFile('img')) {
+            $image = $request->file('img');
+            $imageName = time().'.'.$image->extension();
+            $image->move(public_path('images'), $imageName);
+            $user->img = $imageName;
+        }
+
+        $user->save();
+
+        return redirect()->back()->with('success', 'Profil mis à jour avec succès!');
     }
 
 
