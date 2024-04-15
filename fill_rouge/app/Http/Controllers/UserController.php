@@ -78,6 +78,9 @@ class UserController extends Controller
 
 
 
+
+
+
     public function update(Request $request)
     {
         $request->validate([
@@ -95,7 +98,7 @@ class UserController extends Controller
 
         // Mettre à jour le mot de passe si un nouveau mot de passe est fourni
         if ($request->filled('password')) {
-            $user->password = bcrypt($request->password);
+            $user->password = Hash::make($request->password);
         }
 
         // Gérer le téléchargement de l'image si une nouvelle image est fournie
@@ -103,13 +106,16 @@ class UserController extends Controller
             $image = $request->file('img');
             $imageName = time().'.'.$image->extension();
             $image->move(public_path('images'), $imageName);
-            $user->img = $imageName;
+            // Assurez-vous que le nom de la colonne correspond dans votre modèle User
+            $user->image = $imageName;
         }
 
         $user->save();
 
         return redirect()->back()->with('success', 'Profil mis à jour avec succès!');
     }
+
+
 
 
 }
