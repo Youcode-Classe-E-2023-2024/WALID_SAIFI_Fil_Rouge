@@ -177,7 +177,7 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('vendeur.dashboard')}}">
+                    <a class="nav-link" href="{{route('vendeur.dashbord')}}">
                         <i class="mdi mdi-home menu-icon"></i>
                         <span class="menu-title">Dashboard</span>
                     </a>
@@ -191,7 +191,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('ajouterProduit')}}">
+                    <a class="nav-link" href="{{route('vendeur.ajouterProduit')}}">
                         <i class="mdi mdi-store menu-icon"></i>
                         <span class="menu-title">Ajouter Produit </span>
                     </a>
