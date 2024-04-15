@@ -102,12 +102,12 @@ class UserController extends Controller
         }
 
         // Gérer le téléchargement de l'image si une nouvelle image est fournie
-        if ($request->hasFile('img')) {
-            $image = $request->file('img');
-            $imageName = time().'.'.$image->extension();
-            $image->move(public_path('images'), $imageName);
-            // Assurez-vous que le nom de la colonne correspond dans votre modèle User
-            $user->image = $imageName;
+        if ($request->file('img')) {
+            $file = $request->file('img');
+            @unlink(public_path('/images/' . $user->image)); // delete previous photo
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('/images/'), $filename);
+            $user['image'] = $filename;
         }
 
         $user->save();
