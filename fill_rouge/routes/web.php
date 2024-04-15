@@ -74,7 +74,7 @@ Route::get('/dashboard/vendeur', function () {
 
 
 Route::get('/ajouterProduit', function () {
-    return view('vendeur.dashboard');
+    return view('vendeur.ajouterProduit');
 })->name('ajouterProduit');
 
 Route::get('/profiel/vendeur', function () {
