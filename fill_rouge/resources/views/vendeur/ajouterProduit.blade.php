@@ -19,13 +19,11 @@
                     <div class="form-group">
                         <label for="categorie">Catégorie</label>
                         <select class="form-control" id="categorie" name="categorie">
-                            <option value="1">Catégorie 1</option>
-                            <option value="2">Catégorie 2</option>
-                            <option value="3">Catégorie 3</option>
-                            <!-- Ajoutez d'autres options de catégorie au besoin -->
+                            @foreach($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
                         </select>
                     </div>
-
 
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Images du produit</label>
