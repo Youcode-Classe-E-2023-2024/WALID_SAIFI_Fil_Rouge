@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -17,8 +18,7 @@ class ProductController extends Controller
             'description' => 'nullable|string', // La description est facultative
         ]);
 
-        // Enregistrement du produit dans la base de données
-        $produit = new Produit();
+        $produit = new Product();
         $produit->titre = $request->titre;
         $produit->prix = $request->prix;
         $produit->categorie_id = $request->categorie;
