@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthentificationController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ForgetpasswordController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VendeurController;
 use Illuminate\Support\Facades\Route;
@@ -67,9 +68,7 @@ Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.
 
 
 
-Route::get('/dashboard/vendeur', function () {
-    return view('vendeur.dashVendeur');
-})->name('vendeur.dashboard');
+Route::get('/dashboard/vendeur', [ProductController::class, 'indexAjouterProduit'])->name('vendeur.dashboard');
 
 
 
