@@ -191,9 +191,9 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('')}}">
+                    <a class="nav-link" href="{{route('validation')}}">
                         <i class="mdi mdi-view-headline menu-icon"></i>
-                        <span class="menu-title">Ajouter un Produit</span>
+                        <span class="menu-title">Ajouter des </span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -205,7 +205,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('categories.index')}}">
                         <i class="mdi mdi-grid-large menu-icon"></i>
-                        <span class="menu-title">Gestion des catégories</span>
+                        <span class="menu-title">Gestion des caté</span>
                     </a>
                 </li>
 
