@@ -34,9 +34,10 @@
                     <label for="exampleInputConfirmPassword1">Confirmer le mot de passe</label>
                     <input type="password" class="form-control" id="exampleInputConfirmPassword1" name="password_confirmation" placeholder="Mot de passe">
                 </div>
-                <div class="form-group">
-                    <label>Ajouter Votre image</label>
-                    <input type="file" name="img" class="form-control-file">
+
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Ajouter Votre image</label>
+                    <input class="form-control" type="file" name="img" id="formFile">
                 </div>
                 <button type="submit" class="btn btn-primary me-2">Soumettre</button>
             </form>
