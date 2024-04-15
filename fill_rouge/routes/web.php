@@ -28,48 +28,49 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-
-
-
-
-/* * ******************************************pour Admin****************************************************** */
-Route::get('/validation', [VendeurController::class, 'indexVendeurNonValidesestValider'])->name('validation');
-Route::post('/validerVendeur/{id}', [VendeurController::class, 'validerVendeur'])->name('validerVendeur');
-Route::post('/invaliderVendeur/{id}', [VendeurController::class, 'invaliderVendeur'])->name('invaliderVendeur');
-Route::get('/categories', [CategoriesController::class, 'index'])->name('categories.index');
-Route::post('/categories/create', [CategoriesController::class, 'store'])->name('categories.store');
-Route::delete('/categories/{category}', [CategoriesController::class, 'destroy'])->name('categories.destroy');
-Route::get('/categories/{category}/edit', [CategoriesController::class, 'edit'])->name('categories.edit');
-Route::put('/categories/{category}/update', [CategoriesController::class, 'update'])->name('categories.update');
-
-Route::get('/dashboard', function () {
-    return view('Admin.dashboard');
-})->name('Admin.dashboard');
-
-
-Route::get('/profiel', function () {
-    return view('Admin.profiel');
-})->name('profiel');
-
-Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::post('/register', [UserController::class, 'register'])->name('register');
 Route::get('/register', [UserController::class, 'indexRegistre'])->name('register');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.deconnecter');
+
+
+/* * ******************************************pour Admin****************************************************** */
+Route::middleware(['CheckRole:admin'])->group(function () {
+    Route::get('/validation', [VendeurController::class, 'indexVendeurNonValidesestValider'])->name('validation');
+    Route::post('/validerVendeur/{id}', [VendeurController::class, 'validerVendeur'])->name('validerVendeur');
+    Route::post('/invaliderVendeur/{id}', [VendeurController::class, 'invaliderVendeur'])->name('invaliderVendeur');
+    Route::get('/categories', [CategoriesController::class, 'index'])->name('categories.index');
+    Route::post('/categories/create', [CategoriesController::class, 'store'])->name('categories.store');
+    Route::delete('/categories/{category}', [CategoriesController::class, 'destroy'])->name('categories.destroy');
+    Route::get('/categories/{category}/edit', [CategoriesController::class, 'edit'])->name('categories.edit');
+    Route::put('/categories/{category}/update', [CategoriesController::class, 'update'])->name('categories.update');
+
+    Route::get('/dashboard', function () {
+        return view('Admin.dashboard');
+    })->name('Admin.dashboard');
+
+
+    Route::get('/profiel', function () {
+        return view('Admin.profiel');
+    })->name('profiel');
+
+    Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
+});
+//*************************************************************************************************************************
+
+
+/* ***********************************************Vendeur**************************************** */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
