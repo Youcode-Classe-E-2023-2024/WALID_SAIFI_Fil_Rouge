@@ -25,15 +25,11 @@
                             <!-- Ajoutez d'autres options de catégorie au besoin -->
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="images">Images du produit</label>
-                        <input type="file" name="images[]" class="file-upload-default" id="images" multiple>
-                        <div class="input-group col-xs-12">
-                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                            <span class="input-group-append">
-                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                            </span>
-                        </div>
+
+
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Images du produit</label>
+                        <input class="form-control" type="file" name="img" id="formFile">
                     </div>
 
                     <div class="form-group">
