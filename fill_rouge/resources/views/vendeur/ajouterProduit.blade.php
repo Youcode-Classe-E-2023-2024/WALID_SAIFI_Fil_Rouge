@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Ajouter un Produit</h4>
-                <form class="forms-sample" method="POST" action="" enctype="multipart/form-data">
+                <form class="forms-sample" method="POST" action="{{route('ajoouterProduit')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="titre">Titre</label>
