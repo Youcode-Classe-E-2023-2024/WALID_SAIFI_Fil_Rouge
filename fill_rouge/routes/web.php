@@ -34,8 +34,11 @@ Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.deconnecter');
 
 
-/* * ******************************************pour Admin****************************************************** */
-Route::middleware(['CheckRole:admin'])->group(function () {
+
+
+
+/* * ******************************************pour Admin   ****************************************************** */
+
     Route::get('/validation', [VendeurController::class, 'indexVendeurNonValidesestValider'])->name('validation');
     Route::post('/validerVendeur/{id}', [VendeurController::class, 'validerVendeur'])->name('validerVendeur');
     Route::post('/invaliderVendeur/{id}', [VendeurController::class, 'invaliderVendeur'])->name('invaliderVendeur');
@@ -55,11 +58,34 @@ Route::middleware(['CheckRole:admin'])->group(function () {
     })->name('profiel');
 
     Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
-});
+
 //*************************************************************************************************************************
 
 
-/* ***********************************************Vendeur**************************************** */
+/* ***********************************************Vendeur **************************************** */
+
+
+
+
+Route::get('/dashboard/vendeur', function () {
+    return view('vendeur.dashboard');
+})->name('vendeur.dashboard');
+
+
+
+Route::get('/ajouterProduit', function () {
+    return view('vendeur.dashboard');
+})->name('ajouterProduit');
+
+Route::get('/profiel/vendeur', function () {
+    return view('vendeur.profiel');
+})->name('vendeur.profiel');
+
+Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
+
+
+
+/* ************************************************************************************************ */
 
 
 
