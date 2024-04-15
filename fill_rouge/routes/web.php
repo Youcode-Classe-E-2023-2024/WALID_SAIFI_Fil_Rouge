@@ -70,8 +70,8 @@ Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.
 
 Route::get('/ajouterProduit', [ProductController::class, 'indexAjouterProduit'])->name('vendeur.ajouterProduit');
 Route::post('/ajoouterProduit',[ProductController::class, 'ajouterProduit'])->name('ajoouterProduit');
-
 Route::get('/dashbord/vendeur', [ProductController::class, 'index'])->name('vendeur.dashbord');
+Route::get('/dashbord/vendeur/gestionProduit',[ProductController::class, 'indexGestion'])->name('vendeur.gestionProduit');
 
 
 
