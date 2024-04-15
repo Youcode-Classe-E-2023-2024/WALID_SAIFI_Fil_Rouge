@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "254e11de407e40859a4ee90021f85737",
+    "content-hash": "96aebf04c216277d2ed701500e9e2543",
     "packages": [
         {
             "name": "brick/math",
@@ -1332,6 +1332,142 @@
             "time": "2023-12-03T19:50:20+00:00"
         },
         {
+            "name": "intervention/gif",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/gif.git",
+                "reference": "3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/gif/zipball/3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3",
+                "reference": "3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1",
+                "phpunit/phpunit": "^10.0",
+                "slevomat/coding-standard": "~8.0",
+                "squizlabs/php_codesniffer": "^3.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Gif\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "Native PHP GIF Encoder/Decoder",
+            "homepage": "https://github.com/intervention/gif",
+            "keywords": [
+                "animation",
+                "gd",
+                "gif",
+                "image"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/gif/issues",
+                "source": "https://github.com/Intervention/gif/tree/4.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-26T17:23:47+00:00"
+        },
+        {
+            "name": "intervention/image",
+            "version": "3.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "67be90e5700370c88833190d4edc07e4bb7d157b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/67be90e5700370c88833190d4edc07e4bb7d157b",
+                "reference": "67be90e5700370c88833190d4edc07e4bb7d157b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "intervention/gif": "^4.0.1",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "phpstan/phpstan": "^1",
+                "phpunit/phpunit": "^10.0",
+                "slevomat/coding-standard": "~8.0",
+                "squizlabs/php_codesniffer": "^3.8"
+            },
+            "suggest": {
+                "ext-exif": "Recommended to be able to read EXIF data properly."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "PHP image manipulation",
+            "homepage": "https://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "resize",
+                "thumbnail",
+                "watermark"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/image/issues",
+                "source": "https://github.com/Intervention/image/tree/3.5.1"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-22T07:12:19+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v10.44.0",
             "source": {
@@ -1539,16 +1675,16 @@
         },
         {
             "name": "laravel/passport",
-            "version": "v12.0.1",
+            "version": "v12.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/passport.git",
-                "reference": "37a5b5fbcae25dbb7c6a973957c2ce490e76946e"
+                "reference": "b33d6fce4268d997299547c6e714bada2dab9888"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passport/zipball/37a5b5fbcae25dbb7c6a973957c2ce490e76946e",
-                "reference": "37a5b5fbcae25dbb7c6a973957c2ce490e76946e",
+                "url": "https://api.github.com/repos/laravel/passport/zipball/b33d6fce4268d997299547c6e714bada2dab9888",
+                "reference": "b33d6fce4268d997299547c6e714bada2dab9888",
                 "shasum": ""
             },
             "require": {
@@ -1568,6 +1704,7 @@
                 "nyholm/psr7": "^1.5",
                 "php": "^8.0",
                 "phpseclib/phpseclib": "^2.0|^3.0",
+                "symfony/console": "^6.0|^7.0",
                 "symfony/psr-http-message-bridge": "^2.1|^6.0|^7.0"
             },
             "require-dev": {
@@ -1610,7 +1747,7 @@
                 "issues": "https://github.com/laravel/passport/issues",
                 "source": "https://github.com/laravel/passport"
             },
-            "time": "2024-03-14T16:27:37+00:00"
+            "time": "2024-04-05T15:09:10+00:00"
         },
         {
             "name": "laravel/prompts",
