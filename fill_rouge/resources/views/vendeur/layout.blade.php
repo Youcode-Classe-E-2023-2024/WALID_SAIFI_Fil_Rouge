@@ -196,14 +196,9 @@
                         <span class="menu-title">Ajouter Produit </span>
                     </a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/chartjs.html">
-                        <i class="mdi mdi-chart-pie menu-icon"></i>
-                        <span class="menu-title">Charts</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('categories.index')}}">
+                    <a class="nav-link" href="">
                         <i class="mdi mdi-grid-large menu-icon"></i>
                         <span class="menu-title">Gestion des Produits</span>
                     </a>
