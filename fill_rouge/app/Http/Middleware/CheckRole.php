@@ -16,7 +16,7 @@ class CheckRole
      * @param  string  $role
      * @return mixed
      */
-    public function handle(Request $request, Closure $next, string $role)
+    public function handle(Request $request, Closure $next)
     {
         // Vérifier si l'utilisateur est authentifié
         if (Auth::check()) {
