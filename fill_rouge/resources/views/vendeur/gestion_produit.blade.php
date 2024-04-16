@@ -3,43 +3,44 @@
 @section('content')
 
     <div class="col-12 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Striped Table</h4>
-                    <p class="card-description">
-                        Add class <code>.table-striped</code>
-                    </p>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>
-                                    Titre
-                                </th>
-                                <th>
-                                    Prix
-                                </th>
-                                <th>
-                                    Description de produit
-                                </th>
-                                <th>
-                                    Action
-                                </th>
-                                <th>
-                                  Action
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Striped Table</h4>
+                <p class="card-description">
+                    Add class <code>.table-striped</code>
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>
+                                Titre
+                            </th>
+                            <th>
+                                Prix
+                            </th>
+                            <th>
+                                Description de produit
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($products as $product)
                             <tr>
                                 <td class="py-1">
-                                    test
+                                    {{ $product->titre }}
                                 </td>
                                 <td>
-                                    Herman Beck
+                                    {{ $product->prix }}
                                 </td>
                                 <td>
-                                   fffffffffff
+                                    {{ $product->description }}
                                 </td>
 
                                 <td>
@@ -54,13 +55,11 @@
                                     </form>
                                 </td>
                             </tr>
-
-
-
-                            </tbody>
-                        </table>
-                    </div>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
+        </div>
     </div>
 @endsection
