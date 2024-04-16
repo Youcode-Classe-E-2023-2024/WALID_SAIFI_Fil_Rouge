@@ -22,8 +22,40 @@
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <!-- Autres champs du formulaire avec les valeurs actuelles du produit -->
-                    <!-- ... -->
+                    <div class="form-group">
+                        <label for="prix">Prix</label>
+                        <input type="number" class="form-control" id="prix" name="prix" placeholder="Prix du produit" value="{{ $product->prix }}">
+                        @error('prix')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="categorie">Catégorie</label>
+                        <select class="form-control" id="categorie" name="categorie">
+                            @foreach($categories as $category)
+                                <option value="{{ $category->id }}" {{ $category->id == $product->categorie_id ? 'selected' : '' }}>{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('categorie')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Images du produit</label>
+                        <input class="form-control" type="file" name="img" id="formFile">
+                        @error('img')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleTextarea1">Description de produit</label>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4" name="description">{{ $product->description }}</textarea>
+                        @error('description')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
                     <button type="submit" class="btn btn-primary me-2">Modifier</button>
                 </form>
             </div>
