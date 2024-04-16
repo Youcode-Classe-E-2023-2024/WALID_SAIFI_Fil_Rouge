@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\File;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -62,9 +62,8 @@ public  function index(){
         return view('vendeur.gestion_produit', compact('products'));
     }
 
-    public function indexUpdate(){
-        return view('vendeur.modifierProduit');
-    }
+
+
 
 
     public function modifierProduit(Request $request, $id)
@@ -87,7 +86,7 @@ public  function index(){
         $product->description = $validatedData['description'];
         $product->categorie_id = $validatedData['categorie'];
 
-        // Gérer la mise à jour de l'image si une nouvelle image est fournie
+
         if ($request->file('img')) {
             $file = $request->file('img');
             $filename = date('YmdHi') . $file->getClientOriginalName();
@@ -95,13 +94,40 @@ public  function index(){
             $product->image = $filename;
         }
 
-        // Enregistrer les modifications du produit
+
         $product->save();
 
-        // Redirection avec un message de succès
-        return redirect()->back()->with('success', 'Produit mis à jour avec succès.');
+
+        return redirect()->route('vendeur.gestionProduit')->with('success', 'Produit mis à jour avec succès.');
+
     }
 
+    public function supprimerProduit($id)
+    {
+
+        $product = Product::findOrFail($id);
+
+        if (File::exists(public_path('/images/Produit/' . $product->image))) {
+            File::delete(public_path('/images/Produit/' . $product->image));
+        }
+
+        $product->delete();
+
+
+        return redirect()->back()->with('success', 'Produit supprimé avec succès.');
+    }
+
+
+
+    public function indexUpdate($id)
+    {
+
+        $product = Product::findOrFail($id);
+
+        $categories = Category::all();
+
+        return view('vendeur.modifierProduit', compact('product', 'categories'));
+    }
 
 
 
