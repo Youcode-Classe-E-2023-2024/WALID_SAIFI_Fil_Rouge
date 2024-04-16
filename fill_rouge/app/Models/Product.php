@@ -17,7 +17,7 @@ class Product extends Model
     // Relation "appartient à" avec la catégorie
     public function category()
     {
-        return $this->belongsTo(Category::class, 'id_categorie');
+        return $this->belongsTo(Category::class, 'categorie_id');
     }
 
 
