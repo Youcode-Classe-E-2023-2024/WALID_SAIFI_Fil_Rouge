@@ -205,7 +205,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link"  href="{{route('profiel')}}" >
+                    <a class="nav-link"  href="{{route('vendeur.profiel')}}" >
                         <i class="mdi mdi-account menu-icon"></i>
                         <span class="menu-title">Modifier mon profiel</span>
                     </a>
