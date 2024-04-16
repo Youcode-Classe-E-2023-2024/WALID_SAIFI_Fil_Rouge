@@ -207,15 +207,15 @@
 
         <!--  Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Recent Posts</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            <h2>Produit </h2>
         </div><!-- End Section Title -->
+
 
         <div class="container">
 
             <div class="row gy-4">
 
-                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <article>
 
                         <div class="post-img">
@@ -241,7 +241,7 @@
                     </article>
                 </div><!-- End post list item -->
 
-                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <article>
 
                         <div class="post-img">
@@ -267,7 +267,32 @@
                     </article>
                 </div><!-- End post list item -->
 
-                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <article>
+
+                        <div class="post-img">
+                            <img src="frontend/assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
+                        </div>
+
+                        <p class="post-category">Entertainment</p>
+
+                        <h2 class="title">
+                            <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
+                        </h2>
+
+                        <div class="d-flex align-items-center">
+                            <img src="frontend/assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                            <div class="post-meta">
+                                <p class="post-author">Mark Dower</p>
+                                <p class="post-date">
+                                    <time datetime="2022-01-01">Jun 22, 2022</time>
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+                </div>
+                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <article>
 
                         <div class="post-img">
