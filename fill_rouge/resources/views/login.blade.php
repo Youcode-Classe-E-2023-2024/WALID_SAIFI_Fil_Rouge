@@ -28,8 +28,11 @@
                         <div class="brand-logo">
                             <img src="{{ asset('dashbord/images/logo.svg') }}" alt="logo">
                         </div>
-                        <h4>Welcome back!</h4>
-                        <h6 class="font-weight-light">Happy to see you again!</h6>
+                        @if(session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
                         <form class="pt-3" method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group">
