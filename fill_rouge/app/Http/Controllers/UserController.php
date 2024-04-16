@@ -58,10 +58,14 @@ class UserController extends Controller
             if ($user->isAdmin()) {
 
                 return redirect()->route('Admin.dashboard');
-            } elseif ($user->isVendor()) {
 
-                return redirect()->route('vendeur.dashbord');
-            } elseif ($user->isUser()) {
+            } elseif ($user->isVendor()) {
+                if ($user->validation == 1) {
+                    return redirect()->route('vendor.dashboard');
+                } else {
+                    return redirect()->back()->withInput()->withErrors(['email' => 'Le compte n\'a pas encore été validé. Veuillez attendre la validation.']);
+                }
+            }elseif ($user->isUser()) {
 
                 return redirect()->route('home');
             }
@@ -96,12 +100,12 @@ class UserController extends Controller
         $user->prenom = $request->prenom;
         $user->email = $request->email;
 
-        // Mettre à jour le mot de passe si un nouveau mot de passe est fourni
+
         if ($request->filled('password')) {
             $user->password = Hash::make($request->password);
         }
 
-        // Gérer le téléchargement de l'image si une nouvelle image est fournie
+
         if ($request->file('img')) {
             $file = $request->file('img');
             @unlink(public_path('/images/' . $user->image)); // delete previous photo
