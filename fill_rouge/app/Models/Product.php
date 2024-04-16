@@ -20,4 +20,12 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'id_categorie');
     }
 
+
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
 }
