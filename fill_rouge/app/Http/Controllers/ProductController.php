@@ -18,11 +18,11 @@ public  function index(){
         return view('vendeur.ajouterProduit', compact('categories'));
     }
 
-    
+
 
     public function ajouterProduit(Request $request)
     {
-        // Validation des données du formulaire
+
         $validatedData = $request->validate([
             'titre' => 'required|string|max:255',
             'prix' => 'required|numeric',
@@ -31,8 +31,6 @@ public  function index(){
             'description' => 'nullable|string',
         ]);
 
-        // Traitement de l'image
-        // Gérer le téléchargement de l'image si une nouvelle image est fournie
         if ($request->file('img')) {
             $file = $request->file('img');
             // Supprimer l'ancienne image s'il en existe une
@@ -42,7 +40,7 @@ public  function index(){
             $validatedData['image'] = $filename;
         }
 
-        // Création du produit
+
         $product = new Product();
         $product->titre = $validatedData['titre'];
         $product->prix = $validatedData['prix'];
@@ -52,17 +50,20 @@ public  function index(){
         $product->categorie_id = $validatedData['categorie'];
         $product->save();
 
-        // Redirection avec un message de succès
+
         return redirect()->back()->with('success', 'Produit ajouté avec succès.');
     }
 
 
     public function afficherTousProduits()
     {
-        $products = Product::all();
+        $products = Product::where('user_id', auth()->user()->id)->get();
 
         return view('vendeur.gestion_produit', compact('products'));
     }
+
+  
+
 
 
 
