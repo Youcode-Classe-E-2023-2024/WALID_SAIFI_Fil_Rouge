@@ -18,41 +18,52 @@ public  function index(){
         return view('vendeur.ajouterProduit', compact('categories'));
     }
 
+    
 
     public function ajouterProduit(Request $request)
     {
-
-        $request->validate([
+        // Validation des données du formulaire
+        $validatedData = $request->validate([
             'titre' => 'required|string|max:255',
             'prix' => 'required|numeric',
-            'categorie' => 'required|integer',
-            'img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'categorie' => 'required|exists:categories,id',
+            'img' => 'image|max:2048', // Vérifie si le fichier est une image
             'description' => 'nullable|string',
         ]);
 
-        $produit = new Product();
-        $produit->titre = $request->titre;
-        $produit->prix = $request->prix;
-        $produit->id_categorie = $request->id_categorie;
-        $produit->description = $request->description;
-
-
-
+        // Traitement de l'image
+        // Gérer le téléchargement de l'image si une nouvelle image est fournie
         if ($request->file('img')) {
             $file = $request->file('img');
-            @unlink(public_path('/images/Produit' .  $produit ->image)); // delete previous photo
+            // Supprimer l'ancienne image s'il en existe une
+            @unlink(public_path('/images/Produit/' . $validatedData['image']));
             $filename = date('YmdHi') . $file->getClientOriginalName();
             $file->move(public_path('/images/Produit'), $filename);
-            $user['image'] = $filename;
+            $validatedData['image'] = $filename;
         }
-        $produit->save();
 
-        return redirect()->back()->with('success', 'Produit ajouté avec succès');
+        // Création du produit
+        $product = new Product();
+        $product->titre = $validatedData['titre'];
+        $product->prix = $validatedData['prix'];
+        $product->description = $validatedData['description'];
+        $product->image = $validatedData['image']; // Nom de l'image
+        $product->user_id = auth()->user()->id; // Vous pouvez ajuster cela selon votre logique d'authentification
+        $product->categorie_id = $validatedData['categorie'];
+        $product->save();
+
+        // Redirection avec un message de succès
+        return redirect()->back()->with('success', 'Produit ajouté avec succès.');
     }
 
-    public  function  indexGestion(){
-      return view('vendeur.gestion_produit');
+
+    public function afficherTousProduits()
+    {
+        $products = Product::all();
+
+        return view('vendeur.gestion_produit', compact('products'));
     }
+
 
 
 }
