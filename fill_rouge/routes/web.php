@@ -72,10 +72,12 @@ Route::get('/ajouterProduit', [ProductController::class, 'indexAjouterProduit'])
 Route::post('/ajoouterProduit',[ProductController::class, 'ajouterProduit'])->name('ajoouterProduit');
 Route::get('/dashbord/vendeur', [ProductController::class, 'index'])->name('vendeur.dashbord');
 Route::get('/dashbord/vendeur/gestionProduit',[ProductController::class, 'afficherTousProduits'])->name('vendeur.gestionProduit');
-Route::get('/dashbord/vendeur/modifierProduit' ,[ProductController::class, 'indexUpdate'])->name('updateProduit');
-Route::get('/dashbord/vendeur/modifierProduit/{id}' ,[ProductController::class, 'modifierProduit'])->name('modifierProduit');
 
+Route::get('/dashbord/vendeur/modifierProduit/{id}' ,[ProductController::class, 'indexUpdate'])->name('updateProduit');
 
+Route::put('/dashbord/vendeur/modifierProduit/{id}', [ProductController::class, 'modifierProduit'])->name('modifierProduit');
+
+Route::delete('/dashbord/vendeur/supprimerProduit/{id}', [ProductController::class, 'supprimerProduit'])->name('supprimerProduit');
 
 Route::get('/profiel/vendeur', function () {
     return view('vendeur.profiel');
