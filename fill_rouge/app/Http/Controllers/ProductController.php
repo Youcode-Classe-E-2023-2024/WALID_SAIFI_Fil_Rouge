@@ -27,13 +27,13 @@ public  function index(){
             'titre' => 'required|string|max:255',
             'prix' => 'required|numeric',
             'categorie' => 'required|exists:categories,id',
-            'img' => 'image|max:2048', // Vérifie si le fichier est une image
+            'img' => 'image|max:2048', 
             'description' => 'nullable|string',
         ]);
 
         if ($request->file('img')) {
             $file = $request->file('img');
-            // Supprimer l'ancienne image s'il en existe une
+
             @unlink(public_path('/images/Produit/' . $validatedData['image']));
             $filename = date('YmdHi') . $file->getClientOriginalName();
             $file->move(public_path('/images/Produit'), $filename);
@@ -45,8 +45,8 @@ public  function index(){
         $product->titre = $validatedData['titre'];
         $product->prix = $validatedData['prix'];
         $product->description = $validatedData['description'];
-        $product->image = $validatedData['image']; // Nom de l'image
-        $product->user_id = auth()->user()->id; // Vous pouvez ajuster cela selon votre logique d'authentification
+        $product->image = $validatedData['image'];
+        $product->user_id = auth()->user()->id;
         $product->categorie_id = $validatedData['categorie'];
         $product->save();
 
@@ -62,7 +62,7 @@ public  function index(){
         return view('vendeur.gestion_produit', compact('products'));
     }
 
-  
+
 
 
 
