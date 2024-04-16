@@ -131,6 +131,16 @@ public  function index(){
 
 
 
+    public function getProduct()
+    {
+
+        $products = Product::with('category', 'user')->get();
+
+        return view('produit', compact('products'));
+
+    }
+
+
 
 
 
