@@ -5,10 +5,8 @@
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Striped Table</h4>
-                <p class="card-description">
-                    Add class <code>.table-striped</code>
-                </p>
+                <h4 class="card-title">Gestion des Produit</h4>
+               
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
@@ -44,7 +42,7 @@
                                 </td>
 
                                 <td>
-                                    <a href="" class="btn btn-success btn-rounded btn-fw">Modifier</a>
+                                    <a href="{{ route('modifierProduit', $product->id) }}" class="btn btn-success btn-rounded btn-fw">Modifier</a>
                                 </td>
 
                                 <td>
