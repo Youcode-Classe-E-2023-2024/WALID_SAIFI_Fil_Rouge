@@ -8,6 +8,7 @@ use App\Http\Controllers\ForgetpasswordController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VendeurController;
+use App\Http\Middleware\CheckRole;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +40,7 @@ Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.
 
 
 /* * ******************************************pour Admin   ****************************************************** */
-
+Route::middleware(CheckRole::class)->group(function () {
     Route::get('/validation', [VendeurController::class, 'indexVendeurNonValidesestValider'])->name('validation');
     Route::post('/validerVendeur/{id}', [VendeurController::class, 'validerVendeur'])->name('validerVendeur');
     Route::post('/invaliderVendeur/{id}', [VendeurController::class, 'invaliderVendeur'])->name('invaliderVendeur');
@@ -59,7 +60,7 @@ Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.
     })->name('profiel');
 
     Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
-
+});
 //*************************************************************************************************************************
 
 
