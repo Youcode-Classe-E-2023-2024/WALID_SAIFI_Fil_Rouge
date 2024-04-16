@@ -26,13 +26,10 @@ Route::get('/', function () {
     return view('home1');
 })->name('home');
 
-Route::get('/produit', function () {
-    return view('produit');
-})->name('produit');
-
 Route::get('/login', function () {
     return view('login');
 })->name('login');
+Route::get('/produit', [ProductController::class, 'getProduct'])->name('index.produit');
 
 Route::post('/register', [UserController::class, 'register'])->name('register');
 Route::get('/register', [UserController::class, 'indexRegistre'])->name('register');
