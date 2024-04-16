@@ -27,7 +27,7 @@ public  function index(){
             'titre' => 'required|string|max:255',
             'prix' => 'required|numeric',
             'categorie' => 'required|exists:categories,id',
-            'img' => 'image|max:2048',
+            'img' => 'required|image|max:2048',
             'description' => 'nullable|string',
         ]);
 
