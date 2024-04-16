@@ -109,26 +109,42 @@
 
             <div class="row gy-4">
 
-                <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="100">
-                    <article>
-                        <div class="post-img">
-                            <img src="frontend/assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                        </div>
-                        <p class="post-category">Categorier</p>
-                        <h2 class="title">
-                            <a href="blog-details.html">titre de produit </a>
-                        </h2>
-                        <div class="d-flex align-items-center">
-                            <img src="frontend/assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author">nom prenom de  user</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Jan 1, 2022</time>
-                                </p>
+                @foreach ($products as $product)
+                    <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                        <article>
+                            <div class="post-img">
+                                <!-- Afficher l'image du produit (remplacer par le chemin réel) -->
+                                <img src="{{asset('images/produit/'.$product->image)}}" alt="" class="img-fluid">
                             </div>
-                        </div>
-                    </article>
-                </div><!-- End post list item -->
+                            <!-- Vérifier si la catégorie existe avant d'accéder à sa propriété 'name' -->
+                            @if ($product->category)
+                                <p class="post-category">{{ $product->category->name }}</p>
+                            @else
+                                <p class="post-category">Catégorie non définie</p>
+                            @endif
+                            <h2 class="title">
+                                <!-- Afficher le titre du produit -->
+                                <a href="blog-details.html">{{ $product->titre }}</a>
+                            </h2>
+                            <div class="d-flex align-items-center">
+                                <img src="{{asset('images/'.$product->user->image)}}" alt="" class="img-fluid post-author-img flex-shrink-0">
+                                <div class="post-meta">
+                                    <!-- Vérifier si l'utilisateur existe avant d'accéder à ses propriétés 'name' et 'prenom' -->
+                                    @if ($product->user)
+                                        <p class="post-author">{{ $product->user->name }} {{ $product->user->prenom }}</p>
+                                    @else
+                                        <p class="post-author">Utilisateur non défini</p>
+                                    @endif
+                                    <!-- Afficher la date de création du produit (format à adapter selon vos besoins) -->
+                                    <p class="post-date">
+                                        <time datetime="{{ $product->created_at }}">{{ $product->created_at->format('M j, Y') }}</time>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div><!-- End post list item -->
+                @endforeach
+
 
                 <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="200">
                     <article>
