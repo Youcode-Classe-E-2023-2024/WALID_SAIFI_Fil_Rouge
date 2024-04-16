@@ -60,7 +60,7 @@ class UserController extends Controller
                 return redirect()->route('Admin.dashboard');
             } elseif ($user->isVendor()) {
 
-                return redirect()->route('vendeur.dashboard');
+                return redirect()->route('vendeur.dashbord');
             } elseif ($user->isUser()) {
 
                 return redirect()->route('home');
