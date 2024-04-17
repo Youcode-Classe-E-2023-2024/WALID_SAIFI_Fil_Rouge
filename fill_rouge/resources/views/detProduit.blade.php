@@ -98,7 +98,7 @@
                         </div>
                     </div>
 
-                    <p class="text-gray-500">Description de produit</p>
+                    <p class="text-gray-500">Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Vitae exercitationem porro saepe ea harum corrupti vero id laudantium enim, libero blanditiis expedita cupiditate a est.</p>
 
                     <div class="flex py-4 space-x-4">
                         <div class="relative">
