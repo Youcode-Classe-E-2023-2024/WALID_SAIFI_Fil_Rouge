@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -119,6 +120,27 @@ class UserController extends Controller
         return redirect()->back()->with('success', 'Profil mis à jour avec succès!');
     }
 
+
+
+
+    public function sendMessage(Request $request)
+    {
+
+        $request->validate([
+            'email' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
+
+        Message::create([
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+        ]);
+
+        return redirect()->back()->with('success', 'Votre message a été envoyé. Merci !');
+
+    }
 
 
 
