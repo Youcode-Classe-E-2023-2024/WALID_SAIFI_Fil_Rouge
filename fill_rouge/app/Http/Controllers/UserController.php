@@ -150,4 +150,12 @@ class UserController extends Controller
     }
 
 
+    public function deleteMessage($id)
+    {
+        $message = Message::findOrFail($id); // Recherche du message par son ID
+        $message->delete(); // Suppression du message
+        return redirect()->back()->with('success', 'Le message a été supprimé avec succès.');
+    }
+
+
 }
