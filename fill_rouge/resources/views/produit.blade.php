@@ -114,7 +114,7 @@
                         <article>
                             <div class="post-img">
                                 <!-- Afficher l'image du produit (remplacer par le chemin réel) -->
-                                <img src="{{asset('images/produit/'.$product->image)}}" alt="" class="img-fluid">
+                                <img src="{{ asset('images/produit/'.$product->image) }}" alt="" class="img-fluid" style="width: 300px; height: 200px;">
                             </div>
                             <!-- Vérifier si la catégorie existe avant d'accéder à sa propriété 'name' -->
                             @if ($product->category)
@@ -127,8 +127,9 @@
                                 <a href="blog-details.html">{{ $product->titre }}</a>
                             </h2>
                             <div class="d-flex align-items-center">
-                                <img src="{{asset('images/'.$product->user->image)}}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                                <div class="post-meta">
+                                <img src="{{ asset('images/' . $product->user->image) }}" alt="" class="img-fluid post-author-img flex-shrink-0" style="width: 50px; height: 50px;">
+
+                                <div class="post-meta d-flex align-items-center">
                                     <!-- Vérifier si l'utilisateur existe avant d'accéder à ses propriétés 'name' et 'prenom' -->
                                     @if ($product->user)
                                         <p class="post-author">{{ $product->user->name }} {{ $product->user->prenom }}</p>
@@ -139,104 +140,16 @@
                                     <p class="post-date">
                                         <time datetime="{{ $product->created_at }}">{{ $product->created_at->format('M j, Y') }}</time>
                                     </p>
+                                    <!-- Ajouter le bouton pour voir le produit en détail -->
+                                    <a href="" class="btn btn-primary ml-2">Voir détails</a>
                                 </div>
                             </div>
                         </article>
                     </div><!-- End post list item -->
-                @endforeach
+        @endforeach
 
 
-                <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="200">
-                    <article>
-                        <div class="post-img">
-                            <img src="frontend/assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
-                        </div>
-                        <p class="post-category">Sports</p>
-                        <h2 class="title">
-                            <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
-                        </h2>
-                        <div class="d-flex align-items-center">
-                            <img src="frontend/assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author">Allisa Mayer</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Jun 5, 2024</time>
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                </div><!-- End post list item -->
 
-                <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="300">
-                    <article>
-                        <div class="post-img">
-                            <img src="frontend/assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-                        </div>
-                        <p class="post-category">Entertainment</p>
-                        <h2 class="title">
-                            <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
-                        </h2>
-                        <div class="d-flex align-items-center">
-                            <img src="frontend/assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author">Mark Dower</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Jun 22, 2022</time>
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                </div><!-- End post list item -->
-
-                <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="300">
-                    <article>
-                        <div class="post-img">
-                            <img src="frontend/assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-                        </div>
-                        <p class="post-category">Entertainment</p>
-                        <h2 class="title">
-                            <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
-                        </h2>
-                        <div class="d-flex align-items-center">
-                            <img src="frontend/assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author">Mark Dower</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Jun 22, 2022</time>
-                                </p>
-                            </div>
-                        </div>
-
-
-                    </article>
-                </div><!-- End post list item -->
-
-                <div class="col-xl-3 col-md-3" data-aos="fade-up" data-aos-delay="300">
-                    <article>
-                        <div class="post-img">
-                            <img src="frontend/assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-                        </div>
-                        <p class="post-category">Entertainment</p>
-                        <h2 class="title">
-                            <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
-                        </h2>
-                        <div class="d-flex align-items-center">
-                            <img src="frontend/assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author">Mark Dower</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Jun 22, 2022</time>
-                                </p>
-                            </div>
-                        </div>
-
-
-                    </article>
-                </div><!-- End post list item -->
-
-            </div><!-- End recent posts list -->
-
-        </div>
 
     </section><!-- End Recent-posts Section -->
 
