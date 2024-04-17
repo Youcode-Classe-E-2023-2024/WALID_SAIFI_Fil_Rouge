@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use phpseclib3\Crypt\Hash;
 
 class VendeurController extends Controller
 {
@@ -43,5 +44,10 @@ class VendeurController extends Controller
 
         return redirect()->back()->with('success', 'Le vendeur a été invalidé avec succès.');
     }
+
+
+
+
+
 
 }
