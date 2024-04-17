@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use phpseclib3\Crypt\Hash;
 
 class VendeurController extends Controller
@@ -43,6 +45,16 @@ class VendeurController extends Controller
         }
 
         return redirect()->back()->with('success', 'Le vendeur a été invalidé avec succès.');
+    }
+
+    public function index()
+    {
+
+        $user = Auth::user();
+
+        $numberOfProducts = Product::where('user_id', $user->id)->count();
+
+        return view('vendeur.dashVendeur', compact('numberOfProducts'));
     }
 
 
