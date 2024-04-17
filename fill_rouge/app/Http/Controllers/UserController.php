@@ -142,6 +142,12 @@ class UserController extends Controller
 
     }
 
+    public function indexMessage()
+    {
+        $messages = Message::all();
+
+        return view('Admin.message', compact('messages'));
+    }
 
 
 }
