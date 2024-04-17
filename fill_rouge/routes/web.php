@@ -41,6 +41,7 @@ Route::post('/register', [UserController::class, 'register'])->name('register');
 Route::get('/register', [UserController::class, 'indexRegistre'])->name('register');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.deconnecter');
+Route::get('/product', [ProductController::class, 'indexDetail'])->name('product.detail');
 
 
 
@@ -97,11 +98,6 @@ Route::get('/profiel/vendeur', function () {
 
 
 Route::put('/profile/update/vendeur', [UserController::class, 'update'])->name('profile.update.vendeur');
-
-
-
-
-
 
 
 
