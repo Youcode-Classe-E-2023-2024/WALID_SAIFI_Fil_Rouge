@@ -11,7 +11,7 @@
     <div class="card" style="width: 700px;">
         <div class="card-body">
             <h4 class="card-title">Modifier Votre Profil</h4>
-            <form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('profile.update.vendeur') }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
@@ -39,14 +39,8 @@
                     <label for="formFile" class="form-label">Ajouter Votre image</label>
                     <input class="form-control" type="file" name="img" id="formFile">
                 </div>
-                <button type="submit" class="btn btn-primary me-2">Soumettre</button>
+                <button type="submit" class="btn btn-primary me-2">Modifier</button>
             </form>
-            @if(auth()->user()->img)
-                <div class="mt-3">
-                    <p>Image actuelle:</p>
-                    <img src="{{ asset('images/'.auth()->user()->img) }}" alt="Votre image" style="max-width: 200px;">
-                </div>
-            @endif
         </div>
     </div>
 @endsection
