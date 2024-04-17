@@ -82,7 +82,7 @@ Route::middleware(CheckRole::class)->group(function () {
 Route::get('/ajouterProduit', [ProductController::class, 'indexAjouterProduit'])->name('vendeur.ajouterProduit');
 Route::post('/ajoouterProduit',[ProductController::class, 'ajouterProduit'])->name('ajoouterProduit');
 
-Route::get('/dashbord/vendeur', [ProductController::class, 'index'])->name('vendor.dashboard');
+Route::get('/dashbord/vendeur', [VendeurController::class, 'index'])->name('vendor.dashboard');
 Route::get('/dashbord/vendeur/gestionProduit',[ProductController::class, 'afficherTousProduits'])->name('vendeur.gestionProduit');
 
 Route::get('/dashbord/vendeur/modifierProduit/{id}' ,[ProductController::class, 'indexUpdate'])->name('updateProduit');
