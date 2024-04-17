@@ -26,6 +26,10 @@ Route::get('/', function () {
     return view('home1');
 })->name('home');
 
+
+Route::post('/sendMessage', [UserController::class, 'sendMessage'])->name('send.message');
+
+
 Route::get('/login', function () {
     return view('login');
 })->name('login');
