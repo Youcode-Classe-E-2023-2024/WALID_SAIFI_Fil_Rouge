@@ -31,11 +31,12 @@
                     <td>{{ $message->subject }}</td>
                     <td>{{ $message->message }}</td>
                     <td>
-                        <form action="" method="POST">
+                        <form action="{{ route('messages.destroy', $message->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Supprimer</button>
                         </form>
+
                     </td>
                 </tr>
             @endforeach
