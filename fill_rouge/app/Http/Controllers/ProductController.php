@@ -140,5 +140,10 @@ class ProductController extends Controller
     }
 
 
+    public  function  indexDetail(){
+        return view('detProduit');
+    }
+
+
 
 }
