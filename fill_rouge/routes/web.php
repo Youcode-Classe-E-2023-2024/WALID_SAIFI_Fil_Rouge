@@ -29,6 +29,8 @@ Route::get('/', function () {
 
 Route::post('/sendMessage', [UserController::class, 'sendMessage'])->name('send.message');
 
+Route::get('/indexMessage',  [UserController::class, 'indexMessage'])->name('indexMessage');
+
 
 Route::get('/login', function () {
     return view('login');
