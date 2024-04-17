@@ -11,9 +11,7 @@ use phpseclib3\Crypt\Hash;
 class ProductController extends Controller
 {
 
-public  function index(){
-    return view('vendeur.dashVendeur');
-}
+
     public function indexAjouterProduit() {
         $categories = Category::all();
         return view('vendeur.ajouterProduit', compact('categories'));
