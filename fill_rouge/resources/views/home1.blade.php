@@ -109,44 +109,6 @@
 
     </section><!-- End Hero Section -->
 
-    <!-- Clients Section - Home Page -->
-    <section id="clients" class="clients">
-
-        <div class="container-fluid" data-aos="fade-up">
-
-            <div class="row gy-4">
-
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="frontend/assets/img/clients/client-1.png" class="img-fluid" alt="">
-                </div><!-- End Client Item -->
-
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="frontend/assets/img/clients/client-2.png" class="img-fluid" alt="">
-                </div><!-- End Client Item -->
-
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="frontend/assets/img/clients/client-3.png" class="img-fluid" alt="">
-                </div><!-- End Client Item -->
-
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="frontend/assets/img/clients/client-4.png" class="img-fluid" alt="">
-                </div><!-- End Client Item -->
-
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="frontend/assets/img/clients/client-5.png" class="img-fluid" alt="">
-                </div><!-- End Client Item -->
-
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="frontend/assets/img/clients/client-6.png" class="img-fluid" alt="">
-                </div><!-- End Client Item -->
-
-            </div>
-
-        </div>
-
-    </section><!-- End Clients Section -->
-
-    <!-- About Section - Home Page -->
     <section id="about" class="about">
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -381,19 +343,16 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                    <form action="{{ route('send.message') }}" method="post"  >
+                        @csrf
+
                         <div class="row gy-4">
-
                             <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                            </div>
-
-                            <div class="col-md-6 ">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                                <input type="email" class="form-control" name="email" placeholder="Email" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                                <input type="text" class="form-control" name="subject" placeholder="Sujet" required>
                             </div>
 
                             <div class="col-md-12">
@@ -401,22 +360,24 @@
                             </div>
 
                             <div class="col-md-12 text-center">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                                <button type="submit">Send Message</button>
+                                <button type="submit" class="btn btn-danger btn-rounded btn-fw">Envoyer le message</button>
                             </div>
-
                         </div>
                     </form>
-                </div><!-- End Contact Form -->
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                </div><!-- Fin du formulaire de contact -->
+
 
             </div>
 
         </div>
 
-    </section><!-- End Contact Section -->
+    </section><!-- Fin de la section de contact -->
+
 
 </main>
 
