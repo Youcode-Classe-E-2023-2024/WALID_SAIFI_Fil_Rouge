@@ -81,7 +81,8 @@ Route::middleware(CheckRole::class)->group(function () {
 
 Route::get('/ajouterProduit', [ProductController::class, 'indexAjouterProduit'])->name('vendeur.ajouterProduit');
 Route::post('/ajoouterProduit',[ProductController::class, 'ajouterProduit'])->name('ajoouterProduit');
-Route::get('/dashbord/vendeur', [ProductController::class, 'index'])->name('vendeur.dashbord');
+
+Route::get('/dashbord/vendeur', [ProductController::class, 'index'])->name('vendor.dashboard');
 Route::get('/dashbord/vendeur/gestionProduit',[ProductController::class, 'afficherTousProduits'])->name('vendeur.gestionProduit');
 
 Route::get('/dashbord/vendeur/modifierProduit/{id}' ,[ProductController::class, 'indexUpdate'])->name('updateProduit');
@@ -94,7 +95,13 @@ Route::get('/profiel/vendeur', function () {
     return view('vendeur.profiel');
 })->name('vendeur.profiel');
 
-Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
+
+Route::put('/profile/update/vendeur', [UserController::class, 'update'])->name('profile.update.vendeur');
+
+
+
+
+
 
 
 
