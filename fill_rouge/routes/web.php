@@ -29,7 +29,7 @@ Route::get('/', function () {
 
 Route::post('/sendMessage', [UserController::class, 'sendMessage'])->name('send.message');
 
-Route::get('/indexMessage',  [UserController::class, 'indexMessage'])->name('indexMessage');
+
 
 
 Route::get('/login', function () {
@@ -67,6 +67,9 @@ Route::middleware(CheckRole::class)->group(function () {
     })->name('profiel');
 
     Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
+
+    Route::get('/indexMessage',  [UserController::class, 'indexMessage'])->name('indexMessage');
+    Route::delete('/messages/{id}', [UserController::class, 'deleteMessage'])->name('messages.destroy');
 });
 //*************************************************************************************************************************
 
