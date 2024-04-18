@@ -26,6 +26,7 @@ class ProductController extends Controller
             'titre' => 'required|string|max:255',
             'prix' => 'required|numeric',
             'categorie' => 'required|exists:categories,id',
+            'nombre' => 'required|numeric',
             'img' => 'required|image|max:2048',
             'description' => 'nullable|string',
         ]);
@@ -45,6 +46,7 @@ class ProductController extends Controller
         $product->prix = $validatedData['prix'];
         $product->description = $validatedData['description'];
         $product->image = $validatedData['image'];
+        $product->nombre = $validatedData['nombre'];
         $product->user_id = auth()->user()->id;
         $product->categorie_id = $validatedData['categorie'];
         $product->save();
