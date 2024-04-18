@@ -211,7 +211,7 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link"  href="" >
+                    <a class="nav-link"  href="{{route('indexMessage')}}" >
                         <i class="mdi mdi-tooltip-text menu-icon"></i>
                         <span class="menu-title ">Message</span>
                     </a>
