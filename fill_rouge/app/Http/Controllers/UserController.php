@@ -93,7 +93,7 @@ class UserController extends Controller
             'prenom' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
             'password' => 'nullable|string|min:8|confirmed',
-            'img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'img' => 'max:2048',
         ]);
 
         $user = auth()->user();
