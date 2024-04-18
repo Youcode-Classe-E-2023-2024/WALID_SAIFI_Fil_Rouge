@@ -92,7 +92,12 @@
             @elseif(auth()->user()->isAdmin())
                 <a class="btn-getstarted" href="{{ route('Admin.dashboard') }}">Dashboard</a>
             @elseif(auth()->user()->isUser())
-                <a class="btn-getstarted" href="{{ route('user.deconnecter') }}">Déconnecter</a>
+                <form action="{{ route('user.deconnecter') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn-getstarted">
+                        Déconnexion
+                    </button>
+                </form>
             @endif
 
         @else
@@ -100,6 +105,9 @@
             <a class="btn-getstarted" href="{{ route('login') }}">Login</a>
 
         @endif
+
+
+
 
 
 
