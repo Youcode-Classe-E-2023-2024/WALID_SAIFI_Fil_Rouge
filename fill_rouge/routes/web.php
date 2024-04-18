@@ -32,13 +32,13 @@ Route::post('/sendMessage', [UserController::class, 'sendMessage'])->name('send.
 
 
 Route::middleware('guest')->group(function(){
-    Route::get('/login', function () {
-        return view('login');
-    })->name('login');
 
-    Route::get('/register', [UserController::class, 'indexRegistre'])->name('register');
 });
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
+Route::get('/register', [UserController::class, 'indexRegistre'])->name('register');
 
 Route::get('/produit', [ProductController::class, 'getProduct'])->name('index.produit');
 
