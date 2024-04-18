@@ -104,6 +104,10 @@
         <div class="container section-title" data-aos="fade-up">
             <h2>Produit </h2>
         </div><!-- End Section Title -->
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Produit </h2>
+        </div><!-- End Section Title -->
 
         <div class="container">
 
