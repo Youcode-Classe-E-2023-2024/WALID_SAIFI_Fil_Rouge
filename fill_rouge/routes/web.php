@@ -31,14 +31,19 @@ Route::post('/sendMessage', [UserController::class, 'sendMessage'])->name('send.
 
 
 
+Route::middleware('guest')->group(function(){
+    Route::get('/login', function () {
+        return view('login');
+    })->name('login');
 
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+    Route::get('/register', [UserController::class, 'indexRegistre'])->name('register');
+});
+
+
 Route::get('/produit', [ProductController::class, 'getProduct'])->name('index.produit');
 
 Route::post('/register', [UserController::class, 'register'])->name('register');
-Route::get('/register', [UserController::class, 'indexRegistre'])->name('register');
+
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.deconnecter');
 Route::get('/product', [ProductController::class, 'indexDetail'])->name('product.detail');
