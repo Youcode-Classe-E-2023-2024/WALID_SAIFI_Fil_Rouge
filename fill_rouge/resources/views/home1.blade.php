@@ -75,12 +75,33 @@
                 </li>
                 <li><a href="{{ url('/') }}#contact">Contact</a></li>
 
+
             </ul>
 
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav><!-- End Nav Menu -->
 
-        <a class="btn-getstarted" href="{{route('login')}}">Login</a>
+
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+
+
+        </nav><!-- End Nav Menu  vendor.dashboard-->
+        @if(Auth::check())
+
+            @if(auth()->user()->isVendor())
+                <a class="btn-getstarted" href="{{ route('vendor.dashboard') }}">Dashboard</a>
+            @elseif(auth()->user()->isAdmin())
+                <a class="btn-getstarted" href="{{ route('Admin.dashboard') }}">Dashboard</a>
+            @elseif(auth()->user()->isUser())
+                <a class="btn-getstarted" href="{{ route('user.deconnecter') }}">Déconnecter</a>
+            @endif
+
+        @else
+
+            <a class="btn-getstarted" href="{{ route('login') }}">Login</a>
+
+        @endif
+
+
 
     </div>
 </header><!-- End Header -->
