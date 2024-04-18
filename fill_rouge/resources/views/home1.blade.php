@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Home - Append Bootstrap Template</title>
+    <title>ShopAbda</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -46,7 +46,7 @@
         <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1>Append</h1>
+            <h1>ShopAbda</h1>
             <span>.</span>
         </a>
 
@@ -55,7 +55,7 @@
             <ul>
                 <li><a href="{{route('home')}}" class="active">Home</a></li>
                 <li><a href="{{ url('/') }}#about">About</a></li>
-                <li><a href="{{ url('/') }}#portfolio">Portfolio</a></li>
+                <li><a href="">Espace-produit</a></li>
                 <li class="dropdown has-dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down"></i></a>
                     <ul class="dd-box-shadow">
                         <li><a href="#">Dropdown 1</a></li>
