@@ -64,12 +64,6 @@
                                 </div>
                             </div>
                             <div class="my-2 d-flex justify-content-between align-items-center">
-                                <div class="form-check">
-                                    <label class="form-check-label text-muted">
-                                        <input type="checkbox" class="form-check-input" name="remember">
-                                        Rester connecté
-                                    </label>
-                                </div>
                                 <a href="#" class="auth-link text-black">Mot de passe oublié?</a>
                             </div>
                             <div class="my-3">
