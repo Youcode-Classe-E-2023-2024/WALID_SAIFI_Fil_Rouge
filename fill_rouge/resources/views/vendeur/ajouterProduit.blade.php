@@ -40,6 +40,17 @@
                         @enderror
                     </div>
 
+
+
+                    <div class="form-group">
+                        <label for="prix">Nombre des Produit</label>
+                        <input type="number" class="form-control" id="nombre" name="nombre" placeholder="Nombre des Produit">
+                        @error('nombre')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Images du produit</label>
                         <input class="form-control" type="file" name="img" id="formFile">
