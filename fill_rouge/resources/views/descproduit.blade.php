@@ -38,34 +38,30 @@
 =
                     </div>
                 </div>
+
                 <div class="col-lg-4">
                     <div class="ud-blog-sidebar">
                         <div class="ud-newsletter-box">
-                            <img
-                                src="assets/images/blog/dotted-shape.svg"
-                                alt="shape"
-                                class="shape shape-1"
-                            />
-                            <img
-                                src="assets/images/blog/dotted-shape.svg"
-                                alt="shape"
-                                class="shape shape-2"
-                            />
-                            <h3 class="ud-newsletter-title">Join our newsletter!</h3>
-                            <p>Enter your email to receive our latest newsletter.</p>
+                            <h3 class="ud-newsletter-title">Acheter notre produit</h3>
+                            <p>Découvrez notre produit de qualité supérieure et facilitez-vous la vie dès aujourd'hui !</p>
                             <form class="ud-newsletter-form">
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Your Email address"
-                                />
-                                <button class="ud-main-btn">Subscribe Now</button>
-                                <p class="ud-newsletter-note">Don't worry, we don't spam</p>
+
+                                <div class="form-group">
+                                    <label for="quantite">Quantité</label>
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        id="quantite"
+                                        placeholder="0"
+                                    />
+                                </div>
+                                <button class="btn btn-primary">Acheter maintenant</button>
                             </form>
                         </div>
-
                     </div>
                 </div>
+
+
             </div>
         </div>
     </section>
