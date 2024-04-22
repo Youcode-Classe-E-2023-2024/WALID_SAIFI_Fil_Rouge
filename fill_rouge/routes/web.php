@@ -49,6 +49,10 @@ Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.
 Route::get('/product', [ProductController::class, 'indexDetail'])->name('product.detail');
 
 
+Route::get('/dec', function () {
+    return view('descproduit');
+})->name('dec');
+
 
 
 
