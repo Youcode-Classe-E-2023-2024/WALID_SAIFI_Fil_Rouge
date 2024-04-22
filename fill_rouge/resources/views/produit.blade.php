@@ -45,10 +45,7 @@
                                     @else
                                         <p class="post-author">Utilisateur non défini</p>
                                     @endif
-                                    <!-- Afficher la date de création du produit (format à adapter selon vos besoins) -->
-                                    <p class="post-date">
-                                        <time datetime="{{ $product->created_at }}">{{ $product->created_at->format('M j, Y') }}</time>
-                                    </p>
+                                  
                                     <!-- Ajouter le bouton pour voir le produit en détail -->
                                     <a href="" class="btn btn-primary ml-2">Voir détails</a>
                                 </div>
