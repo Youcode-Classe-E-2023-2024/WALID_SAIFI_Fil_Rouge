@@ -56,8 +56,27 @@
                         <h2 class="ud-blog-details-title">
                             Facing a challenge is kind of a turn-on for an easy rider
                         </h2>
+                        <p class="ud-blog-details-para">
+                            There’s a time and place for everything… including asking for
+                            reviews. For instance: you should not asking for a review on
+                            your checkout page. The sole purpose of this page is to guide
+                            your customer to complete their purchase, and this means that
+                            the page should be as minimalist and pared-down possible. You
+                            don’t want to have any unnecessary elements or Call To Actions.
+                        </p>
+                        <p class="ud-blog-details-para">
+                            There’s a time and place for everything… including asking for
+                            reviews. For instance: you should not asking for a review on
+                            your checkout page. The sole purpose of this page is to guide
+                            your customer to complete their purchase, and this means that
+                            the page should be as minimalist and pared-down possible. You
+                            don’t want to have any unnecessary elements or Call To Actions.
+                        </p>
 
-=
+
+                        
+                            </div>
+                        </div>
                     </div>
                 </div>
 
