@@ -26,7 +26,7 @@
                                 <img src="{{ asset('images/produit/'.$product->image) }}" alt="" class="img-fluid" style="width: 300px; height: 200px;">
                             </div>
                             @if ($product->prix)
-                                <h5 class="post text-warning">{{ $product->prix }} DH</h5>
+                                <h5 class="post text-success">{{ $product->prix }} DH</h5>
 
                             @endif
                             <h2 class="title">
