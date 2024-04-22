@@ -26,7 +26,8 @@
                                 <img src="{{ asset('images/produit/'.$product->image) }}" alt="" class="img-fluid" style="width: 300px; height: 200px;">
                             </div>
                             @if ($product->prix)
-                                <p class="post-category">{{ $product->prix }}</p>
+                                <h5 class="post text-warning">{{ $product->prix }} DH</h5>
+
                             @endif
                             <h2 class="title">
                                 <!-- Afficher le titre du produit -->
