@@ -85,7 +85,13 @@
                 </li>
                 <li><a href="{{ url('/') }}#contact">Contact</a></li>
                 <!-- Augmentation de la taille de l'icône de panier -->
-                <li><a href="#"><i id="cart-icon" class="bi bi-cart" style="font-size: 24px;"></i> <span id="cart-count">0</span></a></li>
+                <li>
+                    <a href="#">
+                        <i id="cart-icon" class="bi bi-cart text-danger" style="font-size: 24px;"></i>
+                        <span id="cart-count" class="text-danger">0</span>
+                    </a>
+                </li>
+
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav><!-- End Nav Menu -->
