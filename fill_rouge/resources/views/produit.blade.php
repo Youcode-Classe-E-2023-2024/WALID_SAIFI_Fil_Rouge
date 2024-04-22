@@ -45,7 +45,7 @@
                                     @else
                                         <p class="post-author">Utilisateur non défini</p>
                                     @endif
-                                  
+
                                     <!-- Ajouter le bouton pour voir le produit en détail -->
                                     <a href="" class="btn btn-primary ml-2">Voir détails</a>
                                 </div>
