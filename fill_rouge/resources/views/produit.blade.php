@@ -38,7 +38,7 @@
                                     <!-- Vérifier si l'utilisateur existe avant d'accéder à ses propriétés 'name' et 'prenom' -->
 
                                     <!-- Ajouter le bouton pour voir le produit en détail -->
-                                    <a href="{{ route('dec', ['id' => $produit->id]) }}" class="btn btn-primary ml-2">Voir détails</a>
+                                    <a href="{{ route('dec', ['id' => $product->id]) }}" class="btn btn-primary ml-2">Voir détails</a>
 
                                 </div>
                             </div>
