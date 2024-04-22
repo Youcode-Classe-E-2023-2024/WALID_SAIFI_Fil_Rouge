@@ -22,16 +22,5 @@ class Category extends Model
     }
 
 
-    public function getTopCategories()
-    {
-
-        $topCategories = Category::withCount('products')
-            ->orderByDesc('products_count')
-            ->take(3)
-            ->get();
-
-        return response()->json([
-            'categories' => $topCategories
-        ]);
-    }
+    
 }
