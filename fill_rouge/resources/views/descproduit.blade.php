@@ -26,19 +26,9 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
-
-                <div class="col-lg-8">
-                    <div class="ud-blog-details-content">
-                        <h2 class="ud-blog-details-title">
-                            Facing a challenge is kind of a turn-on for an easy rider
-                        </h2>
-
-=
-                    </div>
-                </div>
-
                 <div class="col-lg-4">
                     <div class="ud-blog-sidebar">
                         <div class="ud-newsletter-box">
@@ -60,6 +50,18 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-8">
+                    <div class="ud-blog-details-content">
+                        <h2 class="ud-blog-details-title">
+                            Facing a challenge is kind of a turn-on for an easy rider
+                        </h2>
+
+=
+                    </div>
+                </div>
+
+
 
 
             </div>
