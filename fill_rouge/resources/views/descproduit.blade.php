@@ -12,11 +12,10 @@
                                 <div class="ud-blog-author">
                                     @if($produit->user->image)
                                     <img src="{{ asset('images/'.$produit->user->image) }}" alt="author" />
-                                    @else
-                                        <img src="{{ asset('images/profiel.webp')}}" alt="author" />
                                     @endif
-                                    <span>Posté par : <a href="">
                                         @if($produit->user->name && $produit->user->prenom)
+                                    <span>Posté par : <a href="">
+
                                                 {{$produit->user->name}} {{$produit->user->prenom}}
                                             @endif
                                     </a></span>
