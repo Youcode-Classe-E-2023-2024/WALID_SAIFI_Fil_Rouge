@@ -25,26 +25,16 @@
                                 <!-- Afficher l'image du produit (remplacer par le chemin réel) -->
                                 <img src="{{ asset('images/produit/'.$product->image) }}" alt="" class="img-fluid" style="width: 300px; height: 200px;">
                             </div>
-                            <!-- Vérifier si la catégorie existe avant d'accéder à sa propriété 'name' -->
-                            @if ($product->category)
-                                <p class="post-category">{{ $product->category->name }}</p>
-                            @else
-                                <p class="post-category">Catégorie non définie</p>
+                            @if ($product->prix)
+                                <p class="post-category">{{ $product->prix }}</p>
                             @endif
                             <h2 class="title">
                                 <!-- Afficher le titre du produit -->
                                 <a href="blog-details.html">{{ $product->titre }}</a>
                             </h2>
                             <div class="d-flex align-items-center">
-                                <img src="{{ asset('images/' . $product->user->image) }}" alt="" class="img-fluid post-author-img flex-shrink-0" style="width: 50px; height: 50px;">
-
                                 <div class="post-meta d-flex align-items-center">
                                     <!-- Vérifier si l'utilisateur existe avant d'accéder à ses propriétés 'name' et 'prenom' -->
-                                    @if ($product->user)
-                                        <p class="post-author">{{ $product->user->name }} {{ $product->user->prenom }}</p>
-                                    @else
-                                        <p class="post-author">Utilisateur non défini</p>
-                                    @endif
 
                                     <!-- Ajouter le bouton pour voir le produit en détail -->
                                     <a href="" class="btn btn-primary ml-2">Voir détails</a>
