@@ -10,7 +10,11 @@
                         <div class="ud-blog-overlay">
                             <div class="ud-blog-overlay-content">
                                 <div class="ud-blog-author">
+                                    @if($produit->user->image)
                                     <img src="{{ asset('images/'.$produit->user->image) }}" alt="author" />
+                                    @else
+                                        <img src="{{ asset('images/profiel.webp')}}" alt="author" />
+                                    @endif
                                     <span>Posté par : <a href="">
                                         @if($produit->user->name && $produit->user->prenom)
                                                 {{$produit->user->name}} {{$produit->user->prenom}}
