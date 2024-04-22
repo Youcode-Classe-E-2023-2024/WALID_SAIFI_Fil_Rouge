@@ -20,4 +20,18 @@ class Category extends Model
     {
         return $this->hasMany(Product::class, 'id_categorie');
     }
+
+
+    public function getTopCategories()
+    {
+
+        $topCategories = Category::withCount('products')
+            ->orderByDesc('products_count')
+            ->take(3)
+            ->get();
+
+        return response()->json([
+            'categories' => $topCategories
+        ]);
+    }
 }
