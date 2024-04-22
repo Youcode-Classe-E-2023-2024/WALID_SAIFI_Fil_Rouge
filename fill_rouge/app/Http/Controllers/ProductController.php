@@ -142,8 +142,13 @@ class ProductController extends Controller
     }
 
 
-    public  function  indexDetail(){
-        return view('detProduit');
+    public function indexDetail($id)
+    {
+
+        $produit = Product::with('user', 'category')->findOrFail($id);
+
+        // Retourner la vue avec les détails du produit
+        return view('descproduit', compact('produit'));
     }
 
 
