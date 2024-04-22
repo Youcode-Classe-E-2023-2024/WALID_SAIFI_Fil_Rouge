@@ -15,12 +15,11 @@ class Category extends Model
      */
     protected $fillable = ['name'];
 
-    // Relation "un à plusieurs" avec les produits
     public function products()
     {
         return $this->hasMany(Product::class, 'id_categorie');
     }
 
 
-    
+
 }
