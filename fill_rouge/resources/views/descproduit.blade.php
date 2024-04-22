@@ -1,23 +1,28 @@
 @extends('layout')
 @section('content')
 
-    <section class="ud-blog-details">
+    <div class="ud-blog-details">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="ud-blog-details-image">
                         <img
-                            src="images/Produit/pro.webp"
+                            src="{{ asset('images/produit/'.$produit->image) }}"
                             alt="blog details"
                         />
                         <div class="ud-blog-overlay">
                             <div class="ud-blog-overlay-content">
                                 <div class="ud-blog-author">
-                                    <img src="images/Produit/pro.webp" alt="author" />
+                                    <img src="{{ asset('images/'.$produit->user->image) }}" alt="author" />
                                     <span>
-                       By <a href="javascript:void(0)"> Samuyl Joshi </a>
-                    </span>
-                                </div>
+                                                Posté par : <a href="">
+                                            @if($produit->user->name && $produit->user->prenom)
+                                                {{$produit->user->name}} {{$produit->user->prenom}}
+                                            @endif
+                                                         </a>
+
+                                                      </span>
+                                                 </div>
 
                                 <div class="ud-blog-meta">
                                     <p class="date">
@@ -44,6 +49,7 @@
                                         id="quantite"
                                         placeholder="0"
                                     />
+                                    <label for="quantite">Prix: {{$produit->prix}}</label>
                                 </div>
                                 <button class="btn btn-primary">Acheter maintenant</button>
                             </form>
@@ -54,37 +60,16 @@
                 <div class="col-lg-8">
                     <div class="ud-blog-details-content">
                         <h2 class="ud-blog-details-title">
-                            Facing a challenge is kind of a turn-on for an easy rider
+                            Titre : {{$produit->titre}}
                         </h2>
                         <p class="ud-blog-details-para">
-                            There’s a time and place for everything… including asking for
-                            reviews. For instance: you should not asking for a review on
-                            your checkout page. The sole purpose of this page is to guide
-                            your customer to complete their purchase, and this means that
-                            the page should be as minimalist and pared-down possible. You
-                            don’t want to have any unnecessary elements or Call To Actions.
+                           {{$produit->description}}
                         </p>
-                        <p class="ud-blog-details-para">
-                            There’s a time and place for everything… including asking for
-                            reviews. For instance: you should not asking for a review on
-                            your checkout page. The sole purpose of this page is to guide
-                            your customer to complete their purchase, and this means that
-                            the page should be as minimalist and pared-down possible. You
-                            don’t want to have any unnecessary elements or Call To Actions.
-                        </p>
-
-
-                        
                             </div>
                         </div>
                     </div>
                 </div>
 
-
-
-
-            </div>
-        </div>
     </section>
 
 
