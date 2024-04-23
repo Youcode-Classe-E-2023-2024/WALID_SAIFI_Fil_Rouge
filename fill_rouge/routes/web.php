@@ -57,6 +57,7 @@ Route::get('/product', [ProductController::class, 'indexDetail'])->name('product
 
 
 Route::post('/ajouterpaier', [PanierController::class, 'ajouterProduit'])->name('panier.ajouter');
+
 Route::get('/dec/{id}', [ProductController::class, 'indexDetail'])->name('dec');
 
 
