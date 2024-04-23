@@ -134,7 +134,7 @@ class ProductController extends Controller
 
 
 
-    public function getProduct()
+    public function indexProduct()
     {
 
         $products = Product::with('category', 'user')->get();
@@ -153,9 +153,9 @@ class ProductController extends Controller
         $cartCount = Panier::where('user_id', Auth::id())->count();
 
         $produit = Product::with('user', 'category')->findOrFail($id);
+        $panier = Panier::where('user_id', Auth::id())->with('product')->get();
 
-        // Retourner la vue avec les détails du produit
-        return view('descproduit', compact('produit', 'cartCount'));
+        return view('descproduit', compact('produit', 'cartCount','panier'));
     }
 
 
