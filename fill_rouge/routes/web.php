@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthentificationController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ForgetpasswordController;
+use App\Http\Controllers\PanierController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VendeurController;
@@ -55,6 +56,7 @@ Route::get('/product', [ProductController::class, 'indexDetail'])->name('product
 */
 
 
+Route::post('/ajouterpaier', [PanierController::class, 'ajouterProduit'])->name('panier.ajouter');
 Route::get('/dec/{id}', [ProductController::class, 'indexDetail'])->name('dec');
 
 
