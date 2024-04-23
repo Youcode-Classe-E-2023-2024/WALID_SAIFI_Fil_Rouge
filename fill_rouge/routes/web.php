@@ -41,13 +41,14 @@ Route::get('/login', function () {
 
 Route::get('/register', [UserController::class, 'indexRegistre'])->name('register');
 
-Route::get('/produit', [ProductController::class, 'getProduct'])->name('index.produit');
+Route::get('/produit', [ProductController::class, 'indexProduct'])->name('index.produit');
 
 Route::post('/register', [UserController::class, 'register'])->name('register');
 
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.deconnecter');
 Route::get('/product', [ProductController::class, 'indexDetail'])->name('product.detail');
+Route::delete('/panier/supprimer/{product}', [PanierController::class, ' supprimerProduitPanier'])->name('panier.supprimer');
 
 
 /*Route::get('/dec', function () {
