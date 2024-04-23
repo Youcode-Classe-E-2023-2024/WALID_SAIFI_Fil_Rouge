@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Achat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Panier;
@@ -42,16 +43,43 @@ class PanierController extends Controller
 
     public function supprimerProduitPanier($productId)
     {
-        // Recherchez l'élément du panier associé au produit à supprimer
+
         $panierItem = Panier::where('product_id', $productId)
             ->where('user_id', auth()->id())
             ->firstOrFail();
 
-        // Supprimez l'élément du panier
+
         $panierItem->delete();
 
-        // Redirigez l'utilisateur avec un message de succès
         return redirect()->back()->with('success', 'Le produit a été supprimé du panier avec succès.');
     }
+
+
+
+    public function acheter()
+    {
+        $userId = Auth::id();
+
+
+        $panier = Panier::where('user_id', $userId)->get();
+
+
+        foreach ($panier as $item) {
+            $achat = new Achat();
+            $achat->user_id = $userId;
+            $achat->product_id = $item->product_id;
+            $achat->adresse = 'Votre adresse';
+            $achat->num_telephone = 'Votre numéro de téléphone';
+            $achat->prix_total = $item->prix_total;
+            $achat->save();
+        }
+
+
+        Panier::where('user_id', $userId)->delete();
+
+        return redirect()->route('confirmation')->with('success', 'Achat effectué avec succès!');
+    }
+
+
 
 }
