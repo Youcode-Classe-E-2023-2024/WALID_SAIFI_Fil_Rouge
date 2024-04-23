@@ -34,13 +34,15 @@
                         <div class="ud-newsletter-box">
                             <h3 class="ud-newsletter-title">Acheter notre produit</h3>
                             <p>Découvrez notre produit de qualité supérieure et facilitez-vous la vie dès aujourd'hui !</p>
-                            <form class="ud-newsletter-form">
+                            <form class="ud-newsletter-form" id="addToCartForm" method="POST" action="{{ route('panier.ajouter') }}">
+                                @csrf
                                 <div class="form-group">
                                     <label for="quantite">Quantité</label>
-                                    <input type="number" class="form-control" id="quantite" placeholder="0" />
+                                    <input type="number" class="form-control" id="quantite" name="quantite" placeholder="0" min="1" />
+                                    <input type="hidden" name="product_id" value="{{ $produit->id }}">
                                     <label for="quantite">Prix: {{$produit->prix}}</label>
                                 </div>
-                                <button class="btn btn-primary" id="addToCart">Acheter maintenant</button>
+                                <button type="submit" class="btn btn-primary">Acheter maintenant</button>
                             </form>
                         </div>
                     </div>
