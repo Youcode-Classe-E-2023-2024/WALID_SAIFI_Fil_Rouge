@@ -13,5 +13,9 @@ class Panier extends Model
     {
         return $this->belongsTo(User::class, 'id_utilisateur');
     }
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'product_id');
+    }
 }
 
