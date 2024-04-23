@@ -51,10 +51,6 @@ Route::get('/product', [ProductController::class, 'indexDetail'])->name('product
 Route::delete('/panier/supprimer/{product}', [PanierController::class, 'supprimerProduitPanier'])->name('panier.supprimer');
 
 
-/*Route::get('/dec', function () {
-    return view('descproduit');
-})->name('dec');
-*/
 
 
 Route::post('/ajouterpaier', [PanierController::class, 'ajouterProduit'])->name('panier.ajouter');
@@ -124,6 +120,10 @@ Route::put('/profile/update/vendeur', [UserController::class, 'update'])->name('
 
 
 
+
+Route::get('/validation', function () {
+    return view('validerAchat');
+})->name('validerAchat');
 
 
 
