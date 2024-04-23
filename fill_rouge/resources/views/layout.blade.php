@@ -99,6 +99,7 @@
                                     <span class="text-dark">{{ $item->product->titre }}</span>
                                 </li>
                             @endforeach
+                            <li><button class="btn btn-primary ms-auto">Acheter</button></li>
                         </ul>
 
                     </a>
@@ -109,7 +110,20 @@
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav><!-- End Nav Menu -->
 
-        <a class="btn-getstarted" href="{{route('login')}}">Login</a>
+        @if(Auth::check())
+
+                <form action="{{ route('user.deconnecter') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn-getstarted">
+                        Déconnexion
+                    </button>
+                </form>
+
+        @else
+
+            <a class="btn-getstarted" href="{{ route('login') }}">Login</a>
+
+        @endif
 
     </div>
 </header><!-- End Header -->
