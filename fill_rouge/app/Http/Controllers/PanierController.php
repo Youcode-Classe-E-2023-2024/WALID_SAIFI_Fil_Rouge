@@ -44,5 +44,18 @@ class PanierController extends Controller
 
         return redirect()->back()->with('success', 'Produit ajouté au panier avec succès!');
     }
+    public function supprimerProduitPanier($productId)
+    {
+        // Recherchez l'élément du panier associé au produit à supprimer
+        $panierItem = Panier::where('product_id', $productId)
+            ->where('user_id', auth()->id())
+            ->firstOrFail();
+
+        // Supprimez l'élément du panier
+        $panierItem->delete();
+
+        // Redirigez l'utilisateur avec un message de succès
+        return redirect()->back()->with('success', 'Le produit a été supprimé du panier avec succès.');
+    }
 
 }
