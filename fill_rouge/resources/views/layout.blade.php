@@ -192,6 +192,44 @@
 </div>
 
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Sélectionnez tous les éléments avec la classe "delete-product"
+        const deleteButtons = document.querySelectorAll('.delete-product');
+
+        // Parcourez chaque bouton de suppression
+        deleteButtons.forEach(button => {
+            // Ajoutez un écouteur d'événements pour le clic
+            button.addEventListener('click', function() {
+                // Récupérez l'identifiant du produit à supprimer
+                const productId = this.getAttribute('data-product-id');
+
+                // Envoyez une requête AJAX pour supprimer le produit
+                fetch(`/panier/supprimer/${productId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    }
+                })
+                    .then(response => {
+
+                        if (response.ok) {
+                            window.location.reload();
+                        } else {
+
+                            console.error('La suppression du produit a échoué.');
+                        }
+                    })
+                    .catch(error => {
+
+                        console.error('Une erreur s\'est produite lors de la suppression du produit :', error);
+                    });
+            });
+        });
+    });
+</script>
+
+
 <!-- Vendor JS Files -->
 <script src="{{asset('frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('frontend/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
