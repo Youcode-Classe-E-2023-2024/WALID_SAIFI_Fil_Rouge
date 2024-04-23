@@ -86,9 +86,10 @@
                 <li><a href="{{ url('/') }}#contact">Contact</a></li>
                 <!-- Augmentation de la taille de l'icône de panier -->
                 <li>
-                    <a href="#">
+                    <a href="#" class="dropdown has-dropdown">
                         <i id="cart-icon" class="bi bi-cart text-danger" style="font-size: 24px;"></i>
-                        <span id="cart-count" class="text-danger">0</span>
+                        <span id="cart-count" class="text-danger">{{ $cartCount}}</span>
+                        
                     </a>
                 </li>
 
@@ -177,6 +178,26 @@
     <div></div>
     <div></div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cartIcon = document.getElementById('cart-icon');
+        const cartItems = document.getElementById('cart-items');
+
+        // Masquer la liste déroulante au chargement de la page
+        cartItems.style.display = 'none';
+
+        // Afficher ou masquer la liste déroulante lors du clic sur l'icône du panier
+        cartIcon.addEventListener('click', function() {
+            if (cartItems.style.display === 'none') {
+                cartItems.style.display = 'block';
+            } else {
+                cartItems.style.display = 'none';
+            }
+        });
+    });
+</script>
+
 
 <!-- Vendor JS Files -->
 <script src="{{asset('frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
