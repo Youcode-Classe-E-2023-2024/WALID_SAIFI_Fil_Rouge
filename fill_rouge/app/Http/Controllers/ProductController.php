@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Panier;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Models\Category;
 use App\Models\Product;
@@ -137,18 +139,23 @@ class ProductController extends Controller
 
         $products = Product::with('category', 'user')->get();
 
-        return view('produit', compact('products'));
 
+        $cartCount = Panier::where('user_id', Auth::id())->count();
+
+
+        $panier = Panier::where('user_id', Auth::id())->with('product')->get();
+
+        return view('produit', compact('products', 'panier', 'cartCount'));
     }
-
 
     public function indexDetail($id)
     {
+        $cartCount = Panier::where('user_id', Auth::id())->count();
 
         $produit = Product::with('user', 'category')->findOrFail($id);
 
         // Retourner la vue avec les détails du produit
-        return view('descproduit', compact('produit'));
+        return view('descproduit', compact('produit', 'cartCount'));
     }
 
 
