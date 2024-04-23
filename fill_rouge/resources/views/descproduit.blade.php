@@ -32,7 +32,20 @@
                 <div class="col-lg-4">
                     <div class="ud-blog-sidebar">
                         <div class="ud-newsletter-box">
-                            <h3 class="ud-newsletter-title">Acheter notre produit</h3>
+                            @if (session('quantite'))
+                                <div class="alert alert-danger" role="alert">
+                                    {{ session('quantite') }}
+                                </div>
+                            @endif
+
+                                @if (session('success'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+
+
+                                <h3 class="ud-newsletter-title">Acheter notre produit</h3>
                             <p>Découvrez notre produit de qualité supérieure et facilitez-vous la vie dès aujourd'hui !</p>
                             <form class="ud-newsletter-form" id="addToCartForm" method="POST" action="{{ route('panier.ajouter') }}">
                                 @csrf
