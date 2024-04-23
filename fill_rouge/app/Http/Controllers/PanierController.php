@@ -12,25 +12,22 @@ class PanierController extends Controller
 
     public function ajouterProduit(Request $request)
     {
-
         $request->validate([
             'product_id' => 'required|exists:products,id',
             'quantite' => 'required|integer|min:1',
-
         ]);
 
-
         $userId = Auth::id();
-
-
         $productId = $request->input('product_id');
         $quantite = $request->input('quantite');
 
         $product = Product::findOrFail($productId);
 
+        if ($quantite > $product->nombre) {
+            return redirect()->back()->with('quantite', 'La quantité demandée est supérieure au stock disponible.');
+        }
 
         $prixTotal = $product->prix * $quantite;
-
 
         $panier = new Panier();
         $panier->product_id = $productId;
@@ -38,12 +35,11 @@ class PanierController extends Controller
         $panier->quantite = $quantite;
         $panier->prix_total = $prixTotal;
 
-
         $panier->save();
-
 
         return redirect()->back()->with('success', 'Produit ajouté au panier avec succès!');
     }
+
     public function supprimerProduitPanier($productId)
     {
         // Recherchez l'élément du panier associé au produit à supprimer
