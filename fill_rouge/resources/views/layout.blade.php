@@ -88,10 +88,22 @@
                 <li>
                     <a href="#" class="dropdown has-dropdown">
                         <i id="cart-icon" class="bi bi-cart text-danger" style="font-size: 24px;"></i>
-                        <span id="cart-count" class="text-danger">{{ $cartCount}}</span>
-                        
+                        <span id="cart-count" class="text-danger">{{ $cartCount }}</span>
+                        <ul class="dd-box-shadow">
+                            <!-- Afficher les produits du panier avec une icône de corbeille -->
+                            @foreach($panier as $item)
+                                <li class="d-flex align-items-center"> <!-- Utiliser flexbox pour aligner les éléments -->
+                                    <!-- Icône de corbeille Bootstrap avec taille augmentée -->
+                                    <i class="bi bi-trash text-danger fs-5 me-2 delete-product" data-product-id="{{ $item->product->id }}"></i>
+                                    <!-- Titre du produit avec la classe de couleur de texte Bootstrap -->
+                                    <span class="text-dark">{{ $item->product->titre }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+
                     </a>
                 </li>
+
 
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -178,25 +190,6 @@
     <div></div>
     <div></div>
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const cartIcon = document.getElementById('cart-icon');
-        const cartItems = document.getElementById('cart-items');
-
-        // Masquer la liste déroulante au chargement de la page
-        cartItems.style.display = 'none';
-
-        // Afficher ou masquer la liste déroulante lors du clic sur l'icône du panier
-        cartIcon.addEventListener('click', function() {
-            if (cartItems.style.display === 'none') {
-                cartItems.style.display = 'block';
-            } else {
-                cartItems.style.display = 'none';
-            }
-        });
-    });
-</script>
 
 
 <!-- Vendor JS Files -->
