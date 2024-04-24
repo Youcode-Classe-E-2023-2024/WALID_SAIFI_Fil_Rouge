@@ -136,12 +136,9 @@ class ProductController extends Controller
 
     public function indexProduct()
     {
-
         $products = Product::with('category', 'user')->get();
 
-
         $cartCount = Panier::where('user_id', Auth::id())->count();
-
 
         $panier = Panier::where('user_id', Auth::id())->with('product')->get();
 
@@ -151,7 +148,6 @@ class ProductController extends Controller
     public function indexDetail($id)
     {
         $cartCount = Panier::where('user_id', Auth::id())->count();
-
         $produit = Product::with('user', 'category')->findOrFail($id);
         $panier = Panier::where('user_id', Auth::id())->with('product')->get();
 
@@ -159,5 +155,9 @@ class ProductController extends Controller
     }
 
 
+    public function get_panier_info() {
+        $panier = Panier::where('user_id', Auth::id())->with('product')->get();
+        return response()->json($panier);
+    }
 
 }
