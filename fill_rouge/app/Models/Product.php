@@ -21,6 +21,17 @@ class Product extends Model
     }
 
 
+    public function decrementer($nombreDecrement)
+    {
+        if ($this->nombre >= $nombreDecrement) {
+            $this->nombre -= $nombreDecrement;
+            $this->save();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 
     public function user()
