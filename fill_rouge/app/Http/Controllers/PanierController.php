@@ -97,11 +97,14 @@ class PanierController extends Controller
         $email = $request->input('adresse');
         $telephone = $request->input('telephone');
 
+        // Récupérer les éléments du panier de l'utilisateur
+        $panierItems = $user->panier()->get();
+
         // 1. Vider le panier de l'utilisateur connecté
         $user->panier()->delete();
 
         // 2. Ajouter les informations de l'achat à la table `achats`
-        foreach ($user->panier as $item) {
+        foreach ($panierItems as $item) {
             $achat = new Achat();
             $achat->user_id = $user->id; // Utiliser l'id de l'utilisateur actuel
             $achat->product_id = $item->product_id;
@@ -112,13 +115,14 @@ class PanierController extends Controller
         }
 
         // 3. Décrémenter le nombre de produits dans la table `products`
-        foreach ($user->panier as $item) {
+        foreach ($panierItems as $item) {
             $product = Product::find($item->product_id);
-            $product->decrement('quantity', $item->quantite); // Correction de la méthode decrementer et utilisation de la quantité
+            $product->decrement('nombre', $item->quantite); // Correction de la méthode decrementer et utilisation de la quantité
         }
 
         return redirect()->route('index.produit')->with('success', 'Achat validé avec succès.');
     }
+
 
 
 
