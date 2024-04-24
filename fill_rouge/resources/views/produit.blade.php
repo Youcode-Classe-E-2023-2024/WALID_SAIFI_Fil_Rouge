@@ -12,6 +12,11 @@
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Produit </h2>
+            @if (session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
         </div><!-- End Section Title -->
 
         <div class="container">
