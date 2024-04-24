@@ -23,14 +23,5 @@ class Panier extends Model
     }
 
 
-    public static function getPanier()
-    {
-        return self::where('user_id', Auth::id())->with('product')->get();
-    }
 
-
-    public static function getNombrePanier()
-    {
-        return self::where('user_id', Auth::id())->count();
-    }
 }
