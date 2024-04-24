@@ -89,10 +89,11 @@
                         $user = Auth::user();
                         ?>
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-                        @if($user->image !== null)
-                            <img src="{{ asset('images/'.$user->image)}}" alt="profile"/>
-                        @else
+                        @if($user->image == null)
                             <img src="{{ asset('images/profiel.webp')}}" alt="profile"/>
+                        @else
+                            <img src="{{ asset('images/'.$user->image)}}" alt="profile"/>
+
                         @endif
                         @if($user->name && $user->prenom)
                             <span class="nav-profile-name">{{ $user->name . " " . $user->prenom }}</span>
