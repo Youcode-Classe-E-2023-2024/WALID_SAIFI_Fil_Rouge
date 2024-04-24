@@ -116,13 +116,9 @@ Route::put('/profile/update/vendeur', [UserController::class, 'update'])->name('
 
 
 
-
-
-
-
-
-Route::get('/validation', [PanierController::class, 'validationAchat'])->name('validerAchat');
+Route::get('/validation', [PanierController::class, 'IndexvalidationAchat'])->name('valider.Achat');
 
 Route::get('/get_panier_info', [ProductController::class, 'get_panier_info'])->name('get_panier_info');
 Route::delete('/panier/supprimer/{product}', [PanierController::class, 'supprimerProduitPanier'])->name('panier.supprimer');
-Route::post('/ajouterachat', [PanierController::class, 'validerAchat'])->name('validerAchat');
+Route::post('/validerachat', [PanierController::class, 'validerAchat'])->name('acheter.produit');
+
