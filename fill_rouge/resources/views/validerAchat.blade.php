@@ -29,7 +29,7 @@
 <body>
 <div class="form-container">
     <h2 class="text-center mb-4">Validation d'achat</h2>
-    <form method="post" action="">
+    <form method="post" action="{{route('acheter.produit')}}">
         @csrf
         <div class="mb-3">
             <label for="email" class="form-label">L'adresse : </label>
