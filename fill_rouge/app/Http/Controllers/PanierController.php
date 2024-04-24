@@ -82,12 +82,11 @@ class PanierController extends Controller
     }
 
 
-    public function validationAchat(Request $request)
+    public function IndexvalidationAchat()
     {
 
         return view('validerAchat');
     }
-
 
 
     public function validerAchat(Request $request)
@@ -104,7 +103,7 @@ class PanierController extends Controller
         // 2. Ajouter les informations de l'achat à la table `achats`
         foreach ($user->panier as $item) {
             $achat = new Achat();
-            $achat->user_id = $item->user_id;
+            $achat->user_id = $user->id; // Utiliser l'id de l'utilisateur actuel
             $achat->product_id = $item->product_id;
             $achat->adresse = $email;
             $achat->num_telephone = $telephone;
@@ -115,9 +114,12 @@ class PanierController extends Controller
         // 3. Décrémenter le nombre de produits dans la table `products`
         foreach ($user->panier as $item) {
             $product = Product::find($item->product_id);
-            $product->decrementer($item->quantite); // Appeler la méthode decrementer
+            $product->decrement('quantity', $item->quantite); // Correction de la méthode decrementer et utilisation de la quantité
         }
+
+        return redirect()->route('index.produit')->with('success', 'Achat validé avec succès.');
     }
+
 
 
 
