@@ -60,7 +60,7 @@ Route::get('/dec/{id}', [ProductController::class, 'indexDetail'])->name('dec');
 
 /* * ******************************************pour Admin   ****************************************************** */
 Route::middleware(CheckRole::class)->group(function () {
-    Route::get('/validation', [VendeurController::class, 'indexVendeurNonValidesestValider'])->name('validation');
+    Route::get('/validationVendeur', [VendeurController::class, 'indexVendeurNonValidesestValider'])->name('validation');
     Route::post('/validerVendeur/{id}', [VendeurController::class, 'validerVendeur'])->name('validerVendeur');
     Route::post('/invaliderVendeur/{id}', [VendeurController::class, 'invaliderVendeur'])->name('invaliderVendeur');
     Route::get('/categories', [CategoriesController::class, 'index'])->name('categories.index');
