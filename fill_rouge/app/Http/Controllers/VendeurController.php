@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Achat;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -56,6 +57,32 @@ class VendeurController extends Controller
 
         return view('vendeur.dashVendeur', compact('numberOfProducts'));
     }
+
+
+
+    public function indexAchat()
+    {
+
+        $achats = Achat::with('product')->where('prix_total', '>', 0)->get();
+
+
+        return view('vendeur.listachat', compact('achats'));
+    }
+
+
+
+    public function validerAchatProduit($id)
+    {
+        // dd($id);
+        $achat = Achat::findOrFail($id);
+        $achat->prix_total = -1;//! ila chnger pa cette code ne foction pas
+        $achat->save();
+         //  dd($achat);
+        return redirect()->route('achats.index')->with('success', 'L\'achat a été validé avec succès.');
+
+    }
+
+
 
 
 
