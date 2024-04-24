@@ -109,6 +109,8 @@ Route::get('/profiel/vendeur', function () {
 
 
 Route::put('/profile/update/vendeur', [UserController::class, 'update'])->name('profile.update.vendeur');
+Route::get('/listachat', [VendeurController::class, 'indexAchat'])->name('achats.index');
+Route::put('/validation/achat/produit/{id}', [VendeurController::class, 'validerAchatProduit'])->name('validation.produit');
 
 
 
