@@ -69,7 +69,7 @@
 
 
 
-        </nav><!-- End Nav Menu  vendor.dashboard-->
+        </nav>
         @if(Auth::check())
 
             @if(auth()->user()->isVendor())
