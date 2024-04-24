@@ -37,4 +37,9 @@ class User extends Authenticatable
     {
         return $this->roles()->where('name', 'Utilisateur')->exists();
     }
+
+    public function panier()
+    {
+        return $this->hasMany(Panier::class);
+    }
 }
