@@ -84,7 +84,7 @@
                                 </li>
                             @endforeach
                             <li>
-                                <form action="{{route('validerAchat')}}" method="get">
+                                <form action="{{route('valider.Achat')}}" method="get">
                                 <button class="btn btn-primary ms-auto" type="submit">Valider l'achat</button>
                                 </form>
                             </li>
