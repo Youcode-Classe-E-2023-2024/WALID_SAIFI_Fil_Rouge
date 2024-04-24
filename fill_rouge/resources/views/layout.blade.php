@@ -74,16 +74,20 @@
                         <i id="cart-icon" class="bi bi-cart text-danger" style="font-size: 24px;"></i>
                         <span id="cart-count" class="text-danger">{{ $cartCount }}</span>
                         <ul class="dd-box-shadow">
-                            <!-- Afficher les produits du panier avec une icône de corbeille -->
+
                             @foreach($panier as $item)
-                                <li class="d-flex align-items-center"> <!-- Utiliser flexbox pour aligner les éléments -->
-                                    <!-- Icône de corbeille Bootstrap avec taille augmentée -->
+                                <li class="d-flex align-items-center">
+
                                     <i class="bi bi-trash text-danger fs-5 me-2 delete-product" data-product-id="{{ $item->product->id }}"></i>
-                                    <!-- Titre du produit avec la classe de couleur de texte Bootstrap -->
-                                    <span class="text-dark">{{ $item->product->titre }} X {{$item->quantite}}</span>
+
+                                    <span class="text-dark">  {{ $item->product->titre }}  X  {{$item->quantite}} </span>
                                 </li>
                             @endforeach
-                            <li><button class="btn btn-primary ms-auto">Acheter</button></li>
+                            <li>
+                                <form action="{{route('validerAchat')}}" method="get">
+                                <button class="btn btn-primary ms-auto" type="submit">Valider l'achat</button>
+                                </form>
+                            </li>
                         </ul>
 
                     </a>
@@ -96,12 +100,12 @@
 
         @if(Auth::check())
 
-                <form action="{{ route('user.deconnecter') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn-getstarted">
-                        Déconnexion
-                    </button>
-                </form>
+            <form action="{{ route('user.deconnecter') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn-getstarted">
+                    Déconnexion
+                </button>
+            </form>
 
         @else
 
@@ -113,7 +117,7 @@
 </header><!-- End Header -->
 
 <main>
-           @yield('content')
+    @yield('content')
 
 </main>
 <!-- ======= Footer ======= -->
