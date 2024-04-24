@@ -51,7 +51,8 @@ class PanierController extends Controller
 
         $panierItem->delete();
 
-        return redirect()->back()->with('success', 'Le produit a été supprimé du panier avec succès.');
+        return response()->json(['message' => 'Le produit a été supprimé du panier avec succès.'], 200);
+
     }
 
 
@@ -79,6 +80,45 @@ class PanierController extends Controller
 
         return redirect()->route('confirmation')->with('success', 'Achat effectué avec succès!');
     }
+
+
+    public function validationAchat(Request $request)
+    {
+
+        return view('validerAchat');
+    }
+
+
+
+    public function validerAchat(Request $request)
+    {
+        $user = Auth::user();
+
+        // Récupérer les données du formulaire
+        $email = $request->input('adresse');
+        $telephone = $request->input('telephone');
+
+        // 1. Vider le panier de l'utilisateur connecté
+        $user->panier()->delete();
+
+        // 2. Ajouter les informations de l'achat à la table `achats`
+        foreach ($user->panier as $item) {
+            $achat = new Achat();
+            $achat->user_id = $item->user_id;
+            $achat->product_id = $item->product_id;
+            $achat->adresse = $email;
+            $achat->num_telephone = $telephone;
+            $achat->prix_total = $item->prix_total;
+            $achat->save(); // Utilisation de la méthode save
+        }
+
+        // 3. Décrémenter le nombre de produits dans la table `products`
+        foreach ($user->panier as $item) {
+            $product = Product::find($item->product_id);
+            $product->decrementer($item->quantite); // Appeler la méthode decrementer
+        }
+    }
+
 
 
 
