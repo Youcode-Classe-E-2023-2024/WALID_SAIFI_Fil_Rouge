@@ -136,7 +136,10 @@ class ProductController extends Controller
 
     public function indexProduct()
     {
-        $products = Product::with('category', 'user')->get();
+        $products = Product::with('category', 'user')
+            ->where('nombre', '!=', 0)
+            ->get();
+
 
         $cartCount = Panier::where('user_id', Auth::id())->count();
 
