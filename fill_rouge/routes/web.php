@@ -48,7 +48,7 @@ Route::post('/register', [UserController::class, 'register'])->name('register');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.deconnecter');
 Route::get('/product', [ProductController::class, 'indexDetail'])->name('product.detail');
-Route::delete('/panier/supprimer/{product}', [PanierController::class, 'supprimerProduitPanier'])->name('panier.supprimer');
+
 
 
 
@@ -121,13 +121,8 @@ Route::put('/profile/update/vendeur', [UserController::class, 'update'])->name('
 
 
 
-Route::get('/validation', function () {
-    return view('validerAchat');
-})->name('validerAchat');
+Route::get('/validation', [PanierController::class, 'validationAchat'])->name('validerAchat');
 
-
-
-
-
-
-
+Route::get('/get_panier_info', [ProductController::class, 'get_panier_info'])->name('get_panier_info');
+Route::delete('/panier/supprimer/{product}', [PanierController::class, 'supprimerProduitPanier'])->name('panier.supprimer');
+Route::post('/ajouterachat', [PanierController::class, 'validerAchat'])->name('validerAchat');
