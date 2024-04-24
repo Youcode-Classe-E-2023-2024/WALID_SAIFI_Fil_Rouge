@@ -50,10 +50,12 @@
                             <form class="ud-newsletter-form" id="addToCartForm" method="POST" action="{{ route('panier.ajouter') }}">
                                 @csrf
                                 <div class="form-group">
+                                    <label for="quantite">Quantité totale: {{$produit->nombre}}</label><br>
                                     <label for="quantite">Quantité</label>
                                     <input type="number" class="form-control" id="quantite" name="quantite" placeholder="0" min="1" />
                                     <input type="hidden" name="product_id" value="{{ $produit->id }}">
                                     <label for="quantite">Prix: {{$produit->prix}}</label>
+
                                 </div>
                                 <button type="submit" class="btn btn-primary">Acheter maintenant</button>
                             </form>
