@@ -102,26 +102,6 @@ class VendeurController extends Controller
     }
 
 
-    public function montantTotalAchats($idVendeur)
-    {
-        // Trouver tous les produits vendus par le vendeur
-        $produitsVendus = Product::where('user_id', $idVendeur)->get();
-
-        $montantTotal = 0;
-
-        // Pour chaque produit vendu par le vendeur
-        foreach ($produitsVendus as $produit) {
-            // Trouver les achats correspondants à ce produit
-            $achatsProduit = Achat::where('product_id', $produit->id)->get();
-
-            // Pour chaque achat, ajouter le prix au montant total
-            foreach ($achatsProduit as $achat) {
-                $montantTotal += $achat->prix_total;
-            }
-        }
-
-        return $montantTotal;
-    }
 
 
 
