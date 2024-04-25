@@ -138,7 +138,7 @@ class ProductController extends Controller
     {
         $products = Product::with('category', 'user')
             ->where('nombre', '!=', 0)
-            ->get();
+            ->paginate(4); // Paginer les produits avec 10 éléments par page
 
 
         $cartCount = Panier::where('user_id', Auth::id())->count();
