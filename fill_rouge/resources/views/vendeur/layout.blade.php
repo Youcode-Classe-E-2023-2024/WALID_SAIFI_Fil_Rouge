@@ -155,6 +155,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="{{route('achats.index')}}">
+                        <i class="mdi mdi-store menu-icon"></i>
+                        <span class="menu-title">Validation dess Achats </span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link"  href="{{route('vendeur.profiel')}}" >
                         <i class="mdi mdi-account menu-icon"></i>
                         <span class="menu-title">Modifier mon profiel</span>
