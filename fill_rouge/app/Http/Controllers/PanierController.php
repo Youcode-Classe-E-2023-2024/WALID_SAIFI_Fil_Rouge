@@ -117,8 +117,10 @@ class PanierController extends Controller
         // 3. Décrémenter le nombre de produits dans la table `products`
         foreach ($panierItems as $item) {
             $product = Product::find($item->product_id);
-            $product->decrement('nombre', $item->quantite); // Correction de la méthode decrementer et utilisation de la quantité
+            $quantityToDecrement = min($product->nombre, $item->quantite); // Prend le minimum entre la quantité disponible et la quantité demandée
+            $product->decrement('nombre', $quantityToDecrement); // Décrémente jusqu'à 0 ou jusqu'à la quantité disponible
         }
+
 
         return redirect()->route('index.produit')->with('success', 'Achat validé avec succès.');
     }
