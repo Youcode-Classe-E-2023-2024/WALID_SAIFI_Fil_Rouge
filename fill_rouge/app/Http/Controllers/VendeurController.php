@@ -50,13 +50,32 @@ class VendeurController extends Controller
 
     public function index()
     {
-
         $user = Auth::user();
 
-        $numberOfProducts = Product::where('user_id', $user->id)->count();
+        // Trouver tous les produits publiés par le vendeur
+        $produitsVendus = Product::where('user_id', $user->id)->get();
 
-        return view('vendeur.dashVendeur', compact('numberOfProducts'));
+        // Nombre total de produits publiés par le vendeur
+        $nombreTotalProduits = $produitsVendus->count();
+
+        $montantTotalAchats = 0;
+
+        // Pour chaque produit vendu par le vendeur
+        foreach ($produitsVendus as $produit) {
+            // Trouver les achats correspondants à ce produit
+            $achatsProduit = Achat::where('product_id', $produit->id)->get();
+
+            // Pour chaque achat, ajouter le prix au montant total
+            foreach ($achatsProduit as $achat) {
+                $montantTotalAchats += $achat->prix_total;
+            }
+        }
+
+        return view('vendeur.dashVendeur', compact('montantTotalAchats', 'produitsVendus', 'nombreTotalProduits'));
     }
+
+
+
 
 
 
@@ -80,6 +99,28 @@ class VendeurController extends Controller
          //  dd($achat);
         return redirect()->route('achats.index')->with('success', 'L\'achat a été validé avec succès.');
 
+    }
+
+
+    public function montantTotalAchats($idVendeur)
+    {
+        // Trouver tous les produits vendus par le vendeur
+        $produitsVendus = Product::where('user_id', $idVendeur)->get();
+
+        $montantTotal = 0;
+
+        // Pour chaque produit vendu par le vendeur
+        foreach ($produitsVendus as $produit) {
+            // Trouver les achats correspondants à ce produit
+            $achatsProduit = Achat::where('product_id', $produit->id)->get();
+
+            // Pour chaque achat, ajouter le prix au montant total
+            foreach ($achatsProduit as $achat) {
+                $montantTotal += $achat->prix_total;
+            }
+        }
+
+        return $montantTotal;
     }
 
 
