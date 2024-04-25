@@ -63,7 +63,7 @@ class VendeurController extends Controller
     public function indexAchat()
     {
 
-        $achats = Achat::with('product')->where('validation', '>', 0)->get();
+        $achats = Achat::with('product')->where('validation', '=', 0)->get();
 
 
         return view('vendeur.listachat', compact('achats'));
