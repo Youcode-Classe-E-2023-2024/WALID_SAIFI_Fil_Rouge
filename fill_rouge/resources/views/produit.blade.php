@@ -51,6 +51,16 @@
                     </div><!-- End post list item -->
         @endforeach
 
+                    <!-- Espace entre les produits et la pagination -->
+                    <div class="space-between-products-pagination"></div>
+
+                    <!-- Pagination -->
+                    <div class="container section-title" data-aos="fade-up">
+                        {{ $products->links() }}
+                    </div>
+
+            </div><!-- End container -->
+
 
 
 
