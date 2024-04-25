@@ -24,4 +24,10 @@ class Panier extends Model
 
 
 
+    public static function existePanier($iduser): bool {
+        $count = self::where('user_id', $iduser)->count();
+
+        return $count > 0;
+    }
+
 }
