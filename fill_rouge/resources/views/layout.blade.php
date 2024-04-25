@@ -74,20 +74,27 @@
                         <i id="cart-icon" class="bi bi-cart text-danger" style="font-size: 24px;"></i>
                         <span id="cart-count" class="text-danger">{{ $cartCount }}</span>
                         <ul class="dd-box-shadow">
+                            @php
+                                $userId = Auth::id(); // Récupérer l'ID de l'utilisateur connecté
+                            @endphp
 
-                            @foreach($panier as $item)
-                                <li class="d-flex align-items-center">
-
-                                    <i class="bi bi-trash text-danger fs-5 me-2 delete-product" data-product-id="{{ $item->product->id }}"></i>
-
-                                    <span class="text-dark">  {{ $item->product->titre }}  X  {{$item->quantite}} </span>
+                            @if(\App\Models\Panier::existePanier($userId))
+                                {{-- Afficher les produits du panier --}}
+                                @foreach($panier as $item)
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-trash text-danger fs-5 me-2 delete-product" data-product-id="{{ $item->product->id }}"></i>
+                                        <span class="text-dark"> {{ $item->product->titre }} X {{$item->quantite}} </span>
+                                    </li>
+                                @endforeach
+                                <li>
+                                    <form action="{{route('valider.Achat')}}" method="get">
+                                        <button class="btn btn-primary ms-auto" type="submit">Valider l'achat</button>
+                                    </form>
                                 </li>
-                            @endforeach
-                            <li>
-                                <form action="{{route('valider.Achat')}}" method="get">
-                                <button class="btn btn-primary ms-auto" type="submit">Valider l'achat</button>
-                                </form>
-                            </li>
+                            @else
+                                {{-- Afficher un message indiquant que le panier est vide --}}
+                                <li class="text-black">Aucun produit dans le panier</li>
+                            @endif
                         </ul>
                     </a>
                 </li>
