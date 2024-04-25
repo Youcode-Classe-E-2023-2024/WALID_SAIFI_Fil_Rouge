@@ -63,7 +63,7 @@ class VendeurController extends Controller
     public function indexAchat()
     {
 
-        $achats = Achat::with('product')->where('prix_total', '>', 0)->get();
+        $achats = Achat::with('product')->where('validation', '>', 0)->get();
 
 
         return view('vendeur.listachat', compact('achats'));
@@ -75,7 +75,7 @@ class VendeurController extends Controller
     {
         // dd($id);
         $achat = Achat::findOrFail($id);
-        $achat->prix_total = -1;//! ila chnger pa cette code ne foction pas
+        $achat->validation = -1;//!
         $achat->save();
          //  dd($achat);
         return redirect()->route('achats.index')->with('success', 'L\'achat a été validé avec succès.');
