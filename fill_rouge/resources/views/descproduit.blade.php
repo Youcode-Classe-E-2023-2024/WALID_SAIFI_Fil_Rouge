@@ -47,18 +47,23 @@
 
                                 <h3 class="ud-newsletter-title">Acheter notre produit</h3>
                             <p>Découvrez notre produit de qualité supérieure et facilitez-vous la vie dès aujourd'hui !</p>
-                            <form class="ud-newsletter-form" id="addToCartForm" method="POST" action="{{ route('panier.ajouter') }}">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="quantite">Quantité totale: {{$produit->nombre}}</label><br>
-                                    <label for="quantite">Quantité</label>
-                                    <input type="number" class="form-control" id="quantite" name="quantite" placeholder="0" min="1" />
-                                    <input type="hidden" name="product_id" value="{{ $produit->id }}">
-                                    <label for="quantite">Prix: {{$produit->prix}}</label>
+                                {{-- Blade Template --}}
+                                @if(Auth::check())
+                                    <form class="ud-newsletter-form" id="addToCartForm" method="POST" action="{{ route('panier.ajouter') }}">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="quantite">Quantité totale: {{$produit->nombre}}</label><br>
+                                            <label for="quantite">Quantité</label>
+                                            <input type="number" class="form-control" id="quantite" name="quantite" placeholder="0" min="1" />
+                                            <input type="hidden" name="product_id" value="{{ $produit->id }}">
+                                            <label for="quantite">Prix: {{$produit->prix}}</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Acheter maintenant</button>
+                                    </form>
+                                @else
+                                    <p>Veuillez vous connecter pour pouvoir ajouter des produits au panier.</p>
+                                @endif
 
-                                </div>
-                                <button type="submit" class="btn btn-primary">Acheter maintenant</button>
-                            </form>
                         </div>
                     </div>
                 </div>
