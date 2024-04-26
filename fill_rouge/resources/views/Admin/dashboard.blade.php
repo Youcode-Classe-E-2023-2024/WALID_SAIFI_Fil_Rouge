@@ -62,7 +62,7 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <h4 class="card-title">Bar chart</h4>
-                                                <canvas id="barChart"></canvas>
+                                                <canvas id="xxx"></canvas>
                                             </div>
                                         </div>
                                     </div>
@@ -79,6 +79,42 @@
                         </div>
                     </div>
                 </div>
+               <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <script>
+
+        const achatsParJour = <?php echo json_encode($achatsParJour); ?>;
+
+        const dates = achatsParJour.map(item => item.date);
+        const nombre = achatsParJour.map(item => item.nombre);
+
+        console.log(nombre);
+
+        const ctx = document.getElementById('xxx').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: dates,
+                datasets: [{
+                    label: 'Nombre',
+                    data: nombre,
+                    backgroundColor: 'rgba(227,12,234,0.5)',
+                    borderColor: 'rgba(92,0,128,0.5)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            precision: 0
+                        }
+                    }]
+                }
+            }
+        });
+
+    </script>
 
 @endsection
