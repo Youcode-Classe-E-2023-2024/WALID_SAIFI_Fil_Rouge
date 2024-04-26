@@ -50,9 +50,6 @@ Route::post('/deconnecter', [UserController::class, 'deconnecter'])->name('user.
 Route::get('/product', [ProductController::class, 'indexDetail'])->name('product.detail');
 
 
-
-
-
 Route::post('/ajouterpaier', [PanierController::class, 'ajouterProduit'])->name('panier.ajouter');
 
 Route::get('/dec/{id}', [ProductController::class, 'indexDetail'])->name('dec');
@@ -69,9 +66,7 @@ Route::middleware(CheckRole::class)->group(function () {
     Route::get('/categories/{category}/edit', [CategoriesController::class, 'edit'])->name('categories.edit');
     Route::put('/categories/{category}/update', [CategoriesController::class, 'update'])->name('categories.update');
 
-    Route::get('/dashboard', function () {
-        return view('Admin.dashboard');
-    })->name('Admin.dashboard');
+    Route::get('/dashboard',[UserController::class, 'indexAdmindash'])->name('Admin.dashboard');
 
 
     Route::get('/profiel', function () {
@@ -82,6 +77,8 @@ Route::middleware(CheckRole::class)->group(function () {
 
     Route::get('/indexMessage',  [UserController::class, 'indexMessage'])->name('indexMessage');
     Route::delete('/messages/{id}', [UserController::class, 'deleteMessage'])->name('messages.destroy');
+
+    Route::get('/fetchart', [PanierController::class, 'achatsDesDerniersJours']);
 });
 //*************************************************************************************************************************
 
