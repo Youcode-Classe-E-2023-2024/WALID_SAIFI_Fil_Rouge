@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Achat;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Panier;
@@ -100,10 +101,9 @@ class PanierController extends Controller
         // Récupérer les éléments du panier de l'utilisateur
         $panierItems = $user->panier()->get();
 
-        // 1. Vider le panier de l'utilisateur connecté
+
         $user->panier()->delete();
 
-        // 2. Ajouter les informations de l'achat à la table `achats`
         foreach ($panierItems as $item) {
             $achat = new Achat();
             $achat->user_id = $user->id; // Utiliser l'id de l'utilisateur actuel
@@ -123,6 +123,24 @@ class PanierController extends Controller
 
 
         return redirect()->route('index.produit')->with('success', 'Achat validé avec succès.');
+    }
+
+
+
+    public function achatsDesDerniersJours()
+    {
+
+        $achatsParJour = [];
+
+        for ($i = 6; $i >= 0; $i--) {
+            $date = Carbon::now()->subDays($i)->toDateString();
+
+            $nombreAchats = Achat::whereDate('created_at', $date)->count();
+
+            $achatsParJour[$date] = $nombreAchats;
+        }
+
+        return response()->json($achatsParJour);
     }
 
 
