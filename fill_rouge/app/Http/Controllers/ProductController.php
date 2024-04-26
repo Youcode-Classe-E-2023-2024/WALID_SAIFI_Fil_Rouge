@@ -154,8 +154,11 @@ class ProductController extends Controller
         $produit = Product::with('user', 'category')->findOrFail($id);
         $panier = Panier::where('user_id', Auth::id())->with('product')->get();
 
+        $produit->increment('views');
+
         return view('descproduit', compact('produit', 'cartCount','panier'));
     }
+
 
 
     public function get_panier_info() {
