@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Achat;
 use App\Models\Product;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use phpseclib3\Crypt\Hash;
@@ -50,28 +51,21 @@ class VendeurController extends Controller
 
     public function index()
     {
-        $user = Auth::user();
 
-        // Trouver tous les produits publiés par le vendeur
-        $produitsVendus = Product::where('user_id', $user->id)->get();
+        $userId = Auth::id();
 
-        // Nombre total de produits publiés par le vendeur
-        $nombreTotalProduits = $produitsVendus->count();
+        $nombreTotalProduitsVus = Product::where('user_id', $userId)->sum('views');
+        $nombreTotalProduits   = Product::where('user_id', $userId)->count();
+        //dd($nombreTotalProduitsVus);
+        //dd($nombreTotalProduits);
 
-        $montantTotalAchats = 0;
 
-        // Pour chaque produit vendu par le vendeur
-        foreach ($produitsVendus as $produit) {
-            // Trouver les achats correspondants à ce produit
-            $achatsProduit = Achat::where('product_id', $produit->id)->get();
+        $sommeTotalePrixAchats = Achat::whereHas('product', function ($query) use ($userId) {
+            $query->where('user_id', $userId);
+        })->sum('prix_total');
+        $dateAujourdhui = Carbon::now()->format('d/m/Y');
 
-            // Pour chaque achat, ajouter le prix au montant total
-            foreach ($achatsProduit as $achat) {
-                $montantTotalAchats += $achat->prix_total;
-            }
-        }
-
-        return view('vendeur.dashVendeur', compact('montantTotalAchats', 'produitsVendus', 'nombreTotalProduits'));
+        return view('vendeur.dashVendeur', compact('nombreTotalProduitsVus' , 'nombreTotalProduits','sommeTotalePrixAchats','dateAujourdhui'));
     }
 
 
