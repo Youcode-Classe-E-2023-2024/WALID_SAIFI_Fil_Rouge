@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Achat;
 use App\Models\Message;
 use App\Models\Role;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -156,6 +158,25 @@ class UserController extends Controller
         $message->delete(); // Suppression du message
         return redirect()->back()->with('success', 'Le message a été supprimé avec succès.');
     }
+
+
+
+    public function indexAdmindash() {
+        $achatsParJour = [];
+        for ($i = 6; $i >= 0; $i--) {
+            $date = Carbon::now()->subDays($i)->toDateString();
+
+            $nombreAchats = Achat::whereDate('created_at', $date)->count();
+
+            $achatsParJour[] = ['date' => $date, 'nombre' => $nombreAchats];
+        }
+       // dd($achatsParJour);
+
+        return view('Admin.dashboard', compact('achatsParJour'));
+    }
+
+
+
 
 
 }
