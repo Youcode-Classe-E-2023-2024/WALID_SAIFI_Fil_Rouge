@@ -15,10 +15,10 @@
                             <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                                 <i class="mdi mdi-calendar-heart icon-lg me-3 text-primary"></i>
                                 <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Start date</small>
+                                    <small class="mb-1 text-muted">date</small>
                                     <div class="dropdown">
                                         <a class="btn btn-secondary dropdown-toggle p-0 bg-transparent border-0 text-dark shadow-none font-weight-medium" href="#" role="button" id="dropdownMenuLinkA" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <h5 class="mb-0 d-inline-block">26 Jul 2024</h5>
+                                            <h5 class="mb-0 d-inline-block">{{ $dateAujourdhui}}</h5>
                                         </a>
                                     </div>
                                 </div>
@@ -27,21 +27,21 @@
                                 <i class="mdi mdi-currency-usd me-3 icon-lg text-danger"></i>
                                 <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">Montant total des achats</small>
-                                    <h5 class="me-2 mb-0">{{ $montantTotalAchats }} DH</h5>
+                                    <h5 class="me-2 mb-0"> {{$sommeTotalePrixAchats}}DH</h5>
                                 </div>
                             </div>
                             <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                                 <i class="mdi mdi-eye me-3 icon-lg text-success"></i>
                                 <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Nombre total de vos produits </small>
-                                    <h5 class="me-2 mb-0">{{ $nombreTotalProduits }}</h5>
+                                    <small class="mb-1 text-muted">Nombre des vus de vous produit  </small>
+                                    <h5 class="me-2 mb-0">{{$nombreTotalProduitsVus}}</h5>
                                 </div>
                             </div>
                             <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                                 <i class="mdi mdi-download me-3 icon-lg text-warning"></i>
                                 <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">Nombre total des produits achetés</small>
-                                    <h5 class="me-2 mb-0">{{ $nombreTotalProduits }}</h5>
+                                    <h5 class="me-2 mb-0">{{$nombreTotalProduits}}</h5>
                                 </div>
                             </div>
 
