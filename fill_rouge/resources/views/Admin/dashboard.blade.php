@@ -58,23 +58,14 @@
 
                             <div class="content-wrapper">
                                 <div class="row">
-                                    <div class="col-lg-6 grid-margin stretch-card">
+                                    <div class="col-lg-8 grid-margin stretch-card">
                                         <div class="card">
                                             <div class="card-body">
                                                 <h4 class="card-title">Bar chart</h4>
-                                                <canvas id="xxx"></canvas>
+                                                <canvas id="chart"></canvas>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Les catégories les plus populaires:</h4>
-                                                <canvas id="pieChart"></canvas>
-                                                 </div>
-                                            </div>
-                                        </div>
-                                 </div>
                             </div>
                         </div>
                     </div>
@@ -90,7 +81,7 @@
 
         console.log(nombre);
 
-        const ctx = document.getElementById('xxx').getContext('2d');
+        const ctx = document.getElementById('chart').getContext('2d');
         const chart = new Chart(ctx, {
             type: 'bar',
             data: {
