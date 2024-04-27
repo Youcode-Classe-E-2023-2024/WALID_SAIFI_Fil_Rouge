@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Achat;
 use App\Models\Message;
+use App\Models\Product;
 use App\Models\Role;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -162,6 +163,13 @@ class UserController extends Controller
 
 
     public function indexAdmindash() {
+
+        $nombreTotalProduitsVus = Product::sum('views');
+        $somPrix  = Product::sum('prix');
+        $dateAujourdhui = Carbon::now()->format('d/m/Y');
+
+
+
         $achatsParJour = [];
         for ($i = 6; $i >= 0; $i--) {
             $date = Carbon::now()->subDays($i)->toDateString();
@@ -172,7 +180,8 @@ class UserController extends Controller
         }
        // dd($achatsParJour);
 
-        return view('Admin.dashboard', compact('achatsParJour'));
+        return view('Admin.dashboard', compact('achatsParJour','nombreTotalProduitsVus','somPrix','dateAujourdhui'));
+
     }
 
 
