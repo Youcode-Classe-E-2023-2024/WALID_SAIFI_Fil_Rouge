@@ -173,128 +173,6 @@
 
     </section><!-- End About Section -->
 
-    <!-- Recent-posts Section - Home Page -->
-    <section id="Produit" class="recent-posts">
-
-        <!--  Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Produit </h2>
-        </div><!-- End Section Title -->
-
-
-        <div class="container">
-
-            <div class="row gy-4">
-
-                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <article>
-
-                        <div class="post-img">
-                            <img src="frontend/assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                        </div>
-
-                        <p class="post-category">Politics</p>
-
-                        <h2 class="title">
-                            <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-                        </h2>
-
-                        <div class="d-flex align-items-center">
-                            <img src="frontend/assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author">Maria Doe</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Jan 1, 2022</time>
-                                </p>
-                            </div>
-                        </div>
-
-                    </article>
-                </div><!-- End post list item -->
-
-                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <article>
-
-                        <div class="post-img">
-                            <img src="frontend/assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
-                        </div>
-
-                        <p class="post-category">Sports</p>
-
-                        <h2 class="title">
-                            <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
-                        </h2>
-
-                        <div class="d-flex align-items-center">
-                            <img src="frontend/assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author">Allisa Mayer</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Jun 5, 2024</time>
-                                </p>
-                            </div>
-                        </div>
-
-                    </article>
-                </div><!-- End post list item -->
-
-                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <article>
-
-                        <div class="post-img">
-                            <img src="frontend/assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-                        </div>
-
-                        <p class="post-category">Entertainment</p>
-
-                        <h2 class="title">
-                            <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
-                        </h2>
-
-                        <div class="d-flex align-items-center">
-                            <img src="frontend/assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author">Mark Dower</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Jun 22, 2022</time>
-                                </p>
-                            </div>
-                        </div>
-
-                    </article>
-                </div>
-                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <article>
-
-                        <div class="post-img">
-                            <img src="frontend/assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-                        </div>
-
-                        <p class="post-category">Entertainment</p>
-
-                        <h2 class="title">
-                            <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
-                        </h2>
-
-                        <div class="d-flex align-items-center">
-                            <img src="frontend/assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author">Mark Dower</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Jun 22, 2022</time>
-                                </p>
-                            </div>
-                        </div>
-
-                    </article>
-                </div><!-- End post list item -->
-
-            </div><!-- End recent posts list -->
-
-        </div>
-
-    </section><!-- End Recent-posts Section -->
-
     <!-- Contact Section - Home Page -->
     <section id="contact" class="contact">
 
@@ -315,8 +193,7 @@
                             <div class="info-item" data-aos="fade" data-aos-delay="200">
                                 <i class="bi bi-geo-alt"></i>
                                 <h3>Address</h3>
-                                <p>A108 Adam Street</p>
-                                <p>New York, NY 535022</p>
+                                <p>Safi</p>
                             </div>
                         </div><!-- End Info Item -->
 
@@ -324,8 +201,8 @@
                             <div class="info-item" data-aos="fade" data-aos-delay="300">
                                 <i class="bi bi-telephone"></i>
                                 <h3>Call Us</h3>
-                                <p>+1 5589 55488 55</p>
-                                <p>+1 6678 254445 41</p>
+                                <p>0632055998</p>
+                                <p>0632088998</p>
                             </div>
                         </div><!-- End Info Item -->
 
@@ -333,19 +210,10 @@
                             <div class="info-item" data-aos="fade" data-aos-delay="400">
                                 <i class="bi bi-envelope"></i>
                                 <h3>Email Us</h3>
-                                <p>info@example.com</p>
-                                <p>contact@example.com</p>
+                                <p>contact@shopabda</p>
                             </div>
                         </div><!-- End Info Item -->
 
-                        <div class="col-md-6">
-                            <div class="info-item" data-aos="fade" data-aos-delay="500">
-                                <i class="bi bi-clock"></i>
-                                <h3>Open Hours</h3>
-                                <p>Monday - Friday</p>
-                                <p>9:00AM - 05:00PM</p>
-                            </div>
-                        </div><!-- End Info Item -->
 
                     </div>
 
@@ -397,7 +265,7 @@
         <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-about">
                 <a href="index.html" class="logo d-flex align-items-center">
-                    <span>Append</span>
+                    <span>ShopAbda</span>
                 </a>
                 <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
                 <div class="social-links d-flex mt-4">
@@ -442,16 +310,6 @@
         </div>
     </div>
 
-    <div class="container copyright text-center mt-4">
-        <p>&copy; <span>Copyright</span> <strong class="px-1">Append</strong> <span>All Rights Reserved</span></p>
-        <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you've purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-    </div>
 
 </footer><!-- End Footer -->
 
